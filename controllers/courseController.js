@@ -1,8 +1,20 @@
 import Course from "../models/Course.js";
 
 export const getAllCourses = async (req, res) => {
+
+    const courses = await Course.find();
+
+    if (!courses) {
+        res.status(400).json({
+            success: false,
+            message: "No courses found"
+        });
+    }
+
     res.status(200).json({
-        message: "This route will show all courses"
+        success: true,
+        data: courses,
+        message: `${courses.length} courses found`,
     });
 };
 
