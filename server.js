@@ -9,6 +9,7 @@ dotenv.config({
 });
 
 const app = express();
+app.use(express.json());
 
 app.use("/api/v1/auth", AuthRoutes);
 app.use("/api/v1/courses", CourseRoutes);
