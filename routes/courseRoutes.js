@@ -6,7 +6,7 @@ import { getSingleCourse, updateCourse, deleteCourse } from "../controllers/cour
 const router = express.Router();
 
 router.route("/").get(getAllCourses).post(createCourse);
-router.route("/:id").get(getSingleCourse).put(updateCourse).delete(deleteCourse);
+router.route("/:id").get(getSingleCourse).patch(updateCourse).delete(deleteCourse);
 
 
 export default router;
