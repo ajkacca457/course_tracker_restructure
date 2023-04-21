@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import ConnectDB from "./env/db.js";
+import CourseRoutes from "./routes/courseRoutes.js";
 
 dotenv.config({
     path: "./env/config.env",
@@ -8,12 +9,7 @@ dotenv.config({
 
 const app = express();
 
-app.get("/", (req, res) => {
-    res.json({
-        message: "Hello World",
-    });
-});
-
+app.use("/api/v1/courses", CourseRoutes);
 
 const PORT = process.env.PORT || 5000;
 
