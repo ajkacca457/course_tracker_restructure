@@ -4,6 +4,7 @@ import ConnectDB from "./env/db.js";
 import CourseRoutes from "./routes/courseRoutes.js";
 import AuthRoutes from "./routes/authRoutes.js";
 import ErrorHandler from "./middlewares/ErrorHandler.js";
+import ProtectHandler from "./middlewares/ProtectHandler.js";
 
 dotenv.config({
     path: "./env/config.env",
@@ -13,7 +14,7 @@ const app = express();
 app.use(express.json());
 
 app.use("/api/v1/auth", AuthRoutes);
-app.use("/api/v1/courses", CourseRoutes);
+app.use("/api/v1/courses",ProtectHandler,CourseRoutes);
 
 
 app.use(ErrorHandler);

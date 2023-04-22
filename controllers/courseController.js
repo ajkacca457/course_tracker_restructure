@@ -5,6 +5,9 @@ import {StatusCodes} from "http-status-codes";
 
 export const getAllCourses = AsyncHandler(async (req, res,next) => {
 
+    const {userId}= req.user;
+    console.log(userId);
+
     const courses = await Course.find();
 
     if (!courses) {
