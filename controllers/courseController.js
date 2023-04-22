@@ -6,9 +6,8 @@ import {StatusCodes} from "http-status-codes";
 export const getAllCourses = AsyncHandler(async (req, res,next) => {
 
     const {userId}= req.user;
-    console.log(userId);
 
-    const courses = await Course.find();
+    const courses = await Course.find({createdBy:userId});
 
     if (!courses) {
         return (next(new CustomError("courses are not available",StatusCodes.BAD_REQUEST)))
