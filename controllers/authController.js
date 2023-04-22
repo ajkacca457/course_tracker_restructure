@@ -5,7 +5,7 @@ import { StatusCodes } from "http-status-codes/build/cjs/status-codes.js";
 
 
 export const loginUser = AsyncHandler(async (req, res, next) => {
-    res.status(200).json({
+    res.status(StatusCodes.OK).json({
         success:true,
         message: "Login User"
     });
@@ -14,7 +14,7 @@ export const loginUser = AsyncHandler(async (req, res, next) => {
 
 export const registerUser = AsyncHandler(async (req, res, next) => {
     const {username,email,password}=req.body;
-    
+
     const user= await User.create({username,email,password});
 
     if(!user) {
@@ -23,7 +23,7 @@ export const registerUser = AsyncHandler(async (req, res, next) => {
     
     const token= user.getToken();
 
-    res.status(200).json({
+    res.status(StatusCodes.OK).json({
         success:true,
         user:{id:user._id,username:user.username,email:user.email,createdAt:user.createdAt},
         token,
@@ -33,7 +33,7 @@ export const registerUser = AsyncHandler(async (req, res, next) => {
 
 
 export const updateProfile =AsyncHandler(async (req, res, next) => {
-    res.status(200).json({
+    res.status(StatusCodes.OK).json({
         success:true,
         message: "Update Profile"
     });

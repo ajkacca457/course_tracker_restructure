@@ -11,7 +11,7 @@ export const getAllCourses = AsyncHandler(async (req, res,next) => {
         return (next(new CustomError("courses are not available",StatusCodes.BAD_REQUEST)))
     }
 
-    res.status(200).json({
+    res.status(StatusCodes.OK).json({
         success: true,
         data: courses,
         message: `${courses.length} courses found`,
@@ -27,7 +27,7 @@ export const getSingleCourse = AsyncHandler(async (req, res, next) => {
             return next(new CustomError(`course is not available with id: ${req.params.id}`,StatusCodes.BAD_REQUEST))
         }
     
-        res.status(200).json({
+        res.status(StatusCodes.OK).json({
             success:true,
             data:course,
             message: `course found with ${req.params.id}`,
@@ -44,7 +44,7 @@ export const createCourse = AsyncHandler(async (req, res,next) => {
 
     const course = await Course.create({ name, number_of_lessons, lesson_completed, hours_needed, hours_spended });
 
-    res.status(200).json({
+    res.status(StatusCodes.OK).json({
         success: true,
         data: course,
         message: "new course created",
@@ -53,14 +53,16 @@ export const createCourse = AsyncHandler(async (req, res,next) => {
 
 
 export const updateCourse = AsyncHandler(async (req, res, next) => {
-    res.status(200).json({
+    res.status(StatusCodes.OK).json({
+        success:true,
         message: "This route will update a course"
     });
 });
 
 
 export const deleteCourse =AsyncHandler(async (req, res, next) => {
-    res.status(200).json({
+    res.status(StatusCodes.OK).json({
+        success:true,
         message: "This route will delete a course"
     });
 });
