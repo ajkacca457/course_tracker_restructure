@@ -18,9 +18,8 @@ export const getAllCourses = AsyncHandler(async (req, res,next) => {
 });
 
 
-export const getSingleCourse = async (req, res, next) => {
+export const getSingleCourse = AysncHanlder(async (req, res, next) => {
 
-    try {
         const course= await Course.findById(req.params.id);
 
         if(!course) {
@@ -30,17 +29,11 @@ export const getSingleCourse = async (req, res, next) => {
         res.status(200).json({
             success:true,
             data:course
-        });
-        
-    } catch (error) {
-        next(error)
-    }
+        }); 
+});
 
 
-};
-
-
-export const createCourse = async (req, res,next) => {
+export const createCourse = AsyncHandler(async (req, res,next) => {
     const { name, number_of_lessons, lesson_completed, hours_needed, hours_spended } = req.body;
 
     if (!name || !number_of_lessons || !lesson_completed || !hours_needed || !hours_spended) {
@@ -54,7 +47,7 @@ export const createCourse = async (req, res,next) => {
         data: course,
         message: "new course created",
     });
-};
+});
 
 
 export const updateCourse = async (req, res) => {
