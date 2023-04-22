@@ -1,15 +1,13 @@
 import Course from "../models/Course.js";
+import AsyncHandler from "../middlewares/AsyncHandler.js";
 import CustomError from "../utils/CustomError.js";
 
-export const getAllCourses = async (req, res) => {
+export const getAllCourses = AsyncHandler(async (req, res,next) => {
 
     const courses = await Course.find();
 
     if (!courses) {
-        res.status(400).json({
-            success: false,
-            message: "No courses found"
-        });
+        return (next(new CustomError("courses are not available",401)))
     }
 
     res.status(200).json({
@@ -17,7 +15,7 @@ export const getAllCourses = async (req, res) => {
         data: courses,
         message: `${courses.length} courses found`,
     });
-};
+});
 
 
 export const getSingleCourse = async (req, res, next) => {
