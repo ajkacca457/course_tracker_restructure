@@ -32,6 +32,13 @@ const CourseSchema = new mongoose.Schema({
         min: [1, "Number of lessons cannot be less than 1"],
         max: [100, "Number of lessons cannot exceed 100"],
     },
+
+    createdBy: {
+        type:mongoose.Types.ObjectId,
+        ref:"User",
+        required:[true,"course owner id required"]
+    },
+
     createdAt: {
         type:Date,
         default:Date.now
