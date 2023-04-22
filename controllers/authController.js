@@ -14,11 +14,7 @@ export const loginUser = AsyncHandler(async (req, res, next) => {
 
 export const registerUser = AsyncHandler(async (req, res, next) => {
     const {username,email,password}=req.body;
-
-    if(!username || !email || !password) {
-        return next(new CustomError("please provide all valid values", StatusCodes.BAD_REQUEST))
-    }
-
+    
     const user= await User.create({username,email,password});
 
     if(!user) {
