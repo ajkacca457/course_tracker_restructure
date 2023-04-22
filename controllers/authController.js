@@ -24,10 +24,13 @@ export const registerUser = AsyncHandler(async (req, res, next) => {
     if(!user) {
         return next(new CustomError("user cant be created", StatusCodes.BAD_REQUEST))
     }
+    
+    const token= user.getToken();
 
     res.status(200).json({
         success:true,
         user:{id:user._id,username:user.username,email:user.email,createdAt:user.createdAt},
+        token,
         message: "New user registered"
     });
 });
