@@ -26,6 +26,10 @@ const UserSchema = new mongoose.Schema({
         minLength:6,
         maxLength:20,
         select:false
+    },
+    createdAt: {
+        type:Date,
+        default:Date.now
     }
 
 });
