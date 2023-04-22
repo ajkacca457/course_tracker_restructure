@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import ConnectDB from "./env/db.js";
 import CourseRoutes from "./routes/courseRoutes.js";
 import AuthRoutes from "./routes/authRoutes.js";
+import ErrorHandler from "./middlewares/ErrorHandler.js";
 
 dotenv.config({
     path: "./env/config.env",
@@ -13,6 +14,9 @@ app.use(express.json());
 
 app.use("/api/v1/auth", AuthRoutes);
 app.use("/api/v1/courses", CourseRoutes);
+
+
+app.use(ErrorHandler);
 
 const PORT = process.env.PORT || 5000;
 

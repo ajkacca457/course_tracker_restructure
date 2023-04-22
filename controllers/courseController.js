@@ -1,4 +1,5 @@
 import Course from "../models/Course.js";
+import CustomError from "../utils/CustomError.js";
 
 export const getAllCourses = async (req, res) => {
 
@@ -19,14 +20,29 @@ export const getAllCourses = async (req, res) => {
 };
 
 
-export const getSingleCourse = async (req, res) => {
-    res.status(200).json({
-        message: "This route will show a single course"
-    });
+export const getSingleCourse = async (req, res, next) => {
+
+    try {
+        const course= await Course.findById(req.params.id);
+
+        if(!course) {
+            return next(new CustomError(`course is not available with id: ${req.params.id}`))
+        }
+    
+        res.status(200).json({
+            success:true,
+            data:course
+        });
+        
+    } catch (error) {
+        next(error)
+    }
+
+
 };
 
 
-export const createCourse = async (req, res) => {
+export const createCourse = async (req, res,next) => {
     const { name, number_of_lessons, lesson_completed, hours_needed, hours_spended } = req.body;
 
     if (!name || !number_of_lessons || !lesson_completed || !hours_needed || !hours_spended) {
