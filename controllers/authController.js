@@ -18,10 +18,20 @@ export const loginUser = AsyncHandler(async (req, res, next) => {
         return next(new CustomError("user doesnt exists",StatusCodes.NOT_FOUND));
     }
 
+    const passwordMatch=await user.checkPassword(password);
+
+    if(!passwordMatch) {
+        return next(new CustomError("Wrong credintials",StatusCodes.UNAUTHORIZED));
+    }
+
+    const token= user.getToken();
+    user.password=undefined;
 
     res.status(StatusCodes.OK).json({
         success:true,
-        message: "Login User"
+        user,
+        token,
+        message: "Login successful"
     });
 });
 

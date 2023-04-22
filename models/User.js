@@ -44,5 +44,10 @@ UserSchema.methods.getToken= function() {
     return jwt.sign({userId:this._id},process.env.JWT_SECRET, {expiresIn:process.env.JWT_EXPIRE})
 }
 
+UserSchema.methods.checkPassword= async function(userpassword) {
+    const isMatch= await bcrypt.compare(userpassword,this.password);
+    return isMatch;
+
+}
 
 export default mongoose.model("User", UserSchema);
