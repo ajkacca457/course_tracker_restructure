@@ -27,7 +27,7 @@ export const registerUser = AsyncHandler(async (req, res, next) => {
 
     res.status(200).json({
         success:true,
-        user,
+        user:{id:user._id,username:user.username,email:user.email,createdAt:user.createdAt},
         message: "New user registered"
     });
 });
