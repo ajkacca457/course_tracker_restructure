@@ -5,6 +5,20 @@ import { StatusCodes } from "http-status-codes/build/cjs/status-codes.js";
 
 
 export const loginUser = AsyncHandler(async (req, res, next) => {
+
+    const {email,password}= req.body;
+
+    if(!email||!password) {
+        return next(new CustomError("please provide all the values",StatusCodes.BAD_REQUEST));
+    }
+
+    const user= await User.findOne({email}).select("+password");
+
+    if(!user) {
+        return next(new CustomError("user doesnt exists",StatusCodes.NOT_FOUND));
+    }
+
+
     res.status(StatusCodes.OK).json({
         success:true,
         message: "Login User"
