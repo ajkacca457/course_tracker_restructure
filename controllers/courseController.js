@@ -23,7 +23,7 @@ export const getAllCourses = AsyncHandler(async (req, res,next) => {
 
 export const getSingleCourse = AsyncHandler(async (req, res, next) => {
 
-        const course= await Course.findById(req.params.id);
+        const course= await Course.find({_id:req.params.id, createdBy:req.user.userId});
 
         if(!course) {
             return next(new CustomError(`course is not available with id: ${req.params.id}`,StatusCodes.BAD_REQUEST))
