@@ -19,7 +19,7 @@ export const getAllCourses = AsyncHandler(async (req, res,next) => {
 });
 
 
-export const getSingleCourse = AysncHanlder(async (req, res, next) => {
+export const getSingleCourse = AsyncHandler(async (req, res, next) => {
 
         const course= await Course.findById(req.params.id);
 
