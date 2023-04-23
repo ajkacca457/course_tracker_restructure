@@ -57,8 +57,26 @@ export const registerUser = AsyncHandler(async (req, res, next) => {
 
 
 export const updateProfile =AsyncHandler(async (req, res, next) => {
+    const {username,email}= req.body;
+
+    if(!username || !email) {
+        return next(new CustomError("please provide all the values", StatusCodes.BAD_REQUEST));
+    }
+
+    const user= await User.findOne({_id:req.user.userId});
+
+   if(!user) {
+    return next(new CustomError("user is not found",StatusCodes.BAD_REQUEST));
+   }
+
+   user.username=username;
+   user.email= email;
+   await user.save();
+
+
     res.status(StatusCodes.OK).json({
         success:true,
-        message: "Update Profile"
+        user,
+        message: "Profile updated"
     });
 });

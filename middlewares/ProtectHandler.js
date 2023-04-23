@@ -1,6 +1,5 @@
 import AsyncHandler from "./AsyncHandler.js";
 import CustomError from "../utils/CustomError.js";
-import User from "../models/User.js";
 import { StatusCodes } from "http-status-codes";
 import jwt from "jsonwebtoken";
 
