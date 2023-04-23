@@ -46,6 +46,10 @@ export const createCourse = AsyncHandler(async (req, res,next) => {
 
     const course = await Course.create({ name, number_of_lessons, lesson_completed, hours_needed, hours_spended, createdBy });
 
+    if(!course) {
+        return next(new CustomError("course cant be created",StatusCodes.BAD_REQUEST));
+    }
+
     res.status(StatusCodes.OK).json({
         success: true,
         data: course,
@@ -55,16 +59,37 @@ export const createCourse = AsyncHandler(async (req, res,next) => {
 
 
 export const updateCourse = AsyncHandler(async (req, res, next) => {
+
+    const filter= {createdBy:req.user.userId,_id:req.params.id}
+
+    const course= await Course.findOneAndUpdate(filter,req.body, {
+        new:true,
+        runValidators:true
+    })
+
+    if(!course) {
+        return next(new CustomError("course cant be updated",StatusCodes.BAD_REQUEST))
+    }
+
     res.status(StatusCodes.OK).json({
         success:true,
-        message: "This route will update a course"
+        data:course,
+        message: `course with ${req.params.id} is updated`
     });
 });
 
 
 export const deleteCourse =AsyncHandler(async (req, res, next) => {
+    const filter= {createdBy:req.user.userId,_id:req.params.id}
+
+    const course= await Course.findOneAndDelete(filter);
+
+    if(!course) {
+        return next(new CustomError("course cant be deleted",StatusCodes.BAD_REQUEST))
+
+    }
     res.status(StatusCodes.OK).json({
         success:true,
-        message: "This route will delete a course"
+        message: `course with ${req.params.id} is deleted`
     });
 });
