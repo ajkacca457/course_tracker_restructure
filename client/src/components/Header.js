@@ -21,11 +21,14 @@ const Header = () => {
                     {' '}
                     Course Tracker
                 </h4>
-                <button type="button" className="border-0 text-white py-1 px-2 rounded" onClick={() => { setLoggedin(!loggedin); }}>
-                    <GrLogout />
-                    {" "}
-                    <span className='text-black'>Logout</span>
-                </button>
+
+                {loggedin &&
+                    <button type="button" className="border-0 text-white py-1 px-2 rounded">
+                        <GrLogout />
+                        {" "}
+                        <span className='text-black'>Logout</span>
+                    </button>}
+
             </div>
         </div>
     );
