@@ -1,13 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #f66;
+  border-radius: 10px;
+}
+
+.logout {
+  background: transparent;
+  border: none;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #70bde8;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5993e5;
+}
+
+.loading {
+  width: 50%;
+  margin: 5% auto;
+}
+
+.head1 {
+  font-size: 100%;
+}
+
+.coursecontainer {
+  margin: 4% auto;
+  width: 50%;
+  height: 100vh;
+}
+
+.courseinfo {
+  width: 50%;
+  margin: 10vh auto;
+  height: 100vh;
+  position: relative;
+}
+
+.logincont {
+  width: 50%;
+  margin: 15vh auto;
+  height: 80vh;
+}
+
+.homecontent,
+.coursecontent,
+.alldetail {
+  background-color: white;
+  padding: 1%;
+}
+
+.coursecontent {
+  margin: 15vh 0;
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.home {
+  width: 50%;
+  margin: 15vh auto;
+  background-color: white;
+  padding: 1%;
+}
+
+.progress-cont {
+  width: 50%;
+  margin: 15vh auto;
+  background-color: white;
+  text-align: center;
+  padding: 2%;
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.infocontent {
+  height: 60vh;
+  overflow: auto;
+}
+
+.logo {
+  width: 25%;
+}
+
+.homeinfo {
+  width: 50%;
+  margin: auto;
+}
+
+.navcont {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  align-items: center;
+  padding: 1%;
+}
+
+.updateformcont {
+  position: absolute;
+  width: 100%;
+  height: 75%;
+  background-color: rgba(51, 174, 219, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.updateform {
+  width: 50%;
+}
+
+.easynav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.tagline {
+  width: 25%;
+  text-align: center;
+  margin-left: auto;
+  margin-top: 1%;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.percentcomplete,
+.percentremain {
+  width: 25%;
+  background-color: rgba(0, 103, 158, 1);
+}
+
+.progresscont {
+  width: 30%;
+}
+
+.reportbar {
+  width: 20%;
+  margin: auto;
+}
+
+.cbtn {
+  font-size: 80%;
+  background: transparent;
+  color: red;
+  border: none;
+}
+
+@media screen and (max-width: 500px) {
+
+  .logincont,
+  .home {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 5vh 2%;
+  }
+
+  .coursecontainer {
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+  }
+
+  .homeinfo {
+    width: 80%;
+    margin: auto;
+  }
+
+  .homecontent,
+  .alldetail {
+    width: 100%;
+    height: 100%;
+  }
+
+  .easynav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .loginitem,
+  .signupitem,
+  .courseitem {
+    margin-top: 15%;
+  }
+
+  .infocontent {
+    height: 70vh;
+    overflow: auto;
+  }
+
+  .percentinfo h1 {
+    font-size: 150%;
+  }
+
+  .detailinfo h4 {
+    font-size: 100%;
+  }
+
+  .detailinfo i {
+    font-size: 100%;
+  }
+
+  .home {
+    background-color: #0093e9;
+    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+    background-repeat: no-repeat;
+    color: white;
+    padding: 15vh 2%;
+  }
+
+  .tagline {
+    width: 100%;
+    text-align: right;
+  }
+
+  .tagline,
+  .tagbtn {
+    font-size: 80%;
+  }
+
+  .course-item,
+  .view-btn {
+    font-size: 80%;
+  }
+
+  .percentcomplete,
+  .percentremain {
+    width: 40%;
+    background-color: rgba(0, 103, 158, 1);
+  }
+
+  .progresscont {
+    width: 60%;
+  }
+
+  .loading {
+    margin-top: 25vh;
+  }
+
+  .loading-h {
+    font-size: 100%;
+  }
+
+  .progress-cont {
+    width: 95%;
+    height: 90vh;
+    padding: 10vh 0;
+    margin: 0 auto;
+  }
+
+  .reportbar {
+    width: 40%;
+    margin: auto;
+  }
+
+  .coursecontent {
+    margin: 0;
+    height: 75vh;
+    overflow-y: scroll;
+    padding-top: 15%;
+  }
+
+  .updateformcont {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+  }
+
+  .updateform {
+    width: 80%;
+  }
+
+  .courseinfo {
+    width: 100%;
+    margin: 8vh auto;
+    height: 100vh;
+  }
+
+  .ubtn {
+    font-size: 30%;
+  }
 }
