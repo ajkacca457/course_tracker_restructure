@@ -1,9 +1,11 @@
 import React from 'react';
 // import Easynav from './easynav';
 import TrackerHome from '../images/tracker-home.jpg';
+import Header from '../components/Header';
 
 const Home = () => (
     <div className="home rounded">
+        <Header />
         <p className="text-center">
             Course tracker allows you to track progress of the courses you are taking.
             It is an effective app to make your learning process easy.

@@ -25,6 +25,7 @@ body {
 .logout {
   background: transparent;
   border: none;
+  display: block;
 }
 
 .header {
