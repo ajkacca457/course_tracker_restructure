@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GrLogout } from "react-icons/gr";
 import { GiWhiteBook } from "react-icons/gi";
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
 
@@ -11,16 +12,16 @@ const Header = () => {
         console.log("logout successful");
     };
 
-    console.log(loggedin);
-
     return (
         <div className="header bg-dark px-2 my-0">
             <div className='d-flex justify-content-between align-items-center header-cont mx-auto'>
-                <h4 className="text-center text-white">
-                    <GiWhiteBook />
-                    {' '}
-                    Course Tracker
-                </h4>
+                <NavLink to="/" className="text-decoration-none">
+                    <h4 className="text-center text-white">
+                        <GiWhiteBook />
+                        {' '}
+                        Course Tracker
+                    </h4>
+                </NavLink>
 
                 {loggedin &&
                     <button type="button" className="border-0 text-white py-1 px-2 rounded">
