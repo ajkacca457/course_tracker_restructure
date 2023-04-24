@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { RiLoginBoxFill } from "react-icons/ri";
 
 const Login = () => {
 
@@ -10,7 +11,7 @@ const Login = () => {
     return (
         <div className="logincont">
             <div className="bg-white mx-auto p-4 rounded loginitem">
-                <h4 className="text-center bg-secondary py-2 text-white mb-3 rounded">Login</h4>
+                <h4 className="text-center bg-secondary py-2 text-white mb-3 rounded"><RiLoginBoxFill /> Login</h4>
                 <form onSubmit={e => { handleSubmit(e); }}>
                     <div className="form-group text-left">
                         <input

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { ImPencil2 } from "react-icons/im";
 
 
 const Signup = () => {
@@ -11,7 +12,7 @@ const Signup = () => {
     return (
         <div className="logincont">
             <div className=" bg-white mx-auto p-4 rounded signupitem">
-                <h4 className="text-center bg-secondary py-2 text-white mb-3 rounded">Sign up for free!</h4>
+                <h4 className="text-center bg-secondary py-2 text-white mb-3 rounded"> <ImPencil2 /> Sign up for free!</h4>
                 <form onSubmit={e => { handleSubmit(e); }}>
 
                     <div className="form-group text-left my-3">
