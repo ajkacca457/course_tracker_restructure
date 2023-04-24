@@ -69,7 +69,7 @@ body {
 }
 
 .logincont {
-  width: 50%;
+  width: 40%;
   margin: 15vh auto;
   height: 80vh;
 }
@@ -185,6 +185,10 @@ body {
   max-width: 1200px;
   margin: 1% auto;
   padding: 0 2%;
+}
+
+.signup-btn {
+  width: fit-content;
 }
 
 @media screen and (max-width: 500px) {
