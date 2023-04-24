@@ -3,7 +3,7 @@ import React from 'react';
 import Trackerlogo from '../images/tracker.jpg';
 
 const Home = () => (
-    <div className="home">
+    <div className="home rounded">
         <p className="text-center">
             Course tracker allows you to track progress of the courses you are taking.
             It is an effective app to make your learning process easy.
@@ -12,7 +12,7 @@ const Home = () => (
         <div className="imgcont text-center bg-white py-3">
             <img src={Trackerlogo} alt="symbol for tracker" className="logo" />
             <div className="homeinfo">
-                <h4 className="text-left text-dark text-uppercase my-2">Using this App you can:</h4>
+                <h4 className="text-left text-dark text-uppercase my-4">This app provides following functionalities:</h4>
                 <ul className="text-left text-dark list-group">
                     <li className='list-group-item  list-group-item-info'>Add new courses to your tracker.</li>
                     <li className='list-group-item  list-group-item-info'>See progress of each courses.</li>
