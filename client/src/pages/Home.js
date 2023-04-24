@@ -1,6 +1,6 @@
 import React from 'react';
 // import Easynav from './easynav';
-import Trackerlogo from '../images/tracker.jpg';
+import TrackerHome from '../images/tracker-home.jpg';
 
 const Home = () => (
     <div className="home rounded">
@@ -10,7 +10,7 @@ const Home = () => (
         </p>
 
         <div className="imgcont text-center bg-white py-3">
-            <img src={Trackerlogo} alt="symbol for tracker" className="logo" />
+            <img src={TrackerHome} alt="symbol for tracker" className="logo rounded" />
             <div className="homeinfo">
                 <h4 className="text-left text-dark text-uppercase my-4">This app provides following functionalities:</h4>
                 <ul className="text-left text-dark list-group">
