@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Signup from './pages/SignUp';
 import Login from './pages/Login';
 import SharedLayout from './components/SharedLayout';
+import Error from './pages/Error';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
           </Route>
+          <Route path='*' element={<Error/>}/>
         </Routes>
       </BrowserRouter>
 
