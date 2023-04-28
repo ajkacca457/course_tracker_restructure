@@ -4,7 +4,10 @@ import TrackerHome from '../images/tracker-home.jpg';
 import Header from '../components/Header';
 import { NavLink } from 'react-router-dom';
 
-const Home = () => (
+
+
+const Home = () => {
+return (
     <div className="home rounded">
         <Header />
         <div className="imgcont text-center bg-white">
@@ -29,7 +32,7 @@ const Home = () => (
         </div>
 
         {/* <Easynav /> */}
-    </div>
-);
+    </div>)
+}
 
 export default Home;
