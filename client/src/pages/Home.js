@@ -2,16 +2,20 @@ import React from 'react';
 // import Easynav from './easynav';
 import TrackerHome from '../images/tracker-home.jpg';
 import Header from '../components/Header';
+import { NavLink } from 'react-router-dom';
 
 const Home = () => (
     <div className="home rounded">
         <Header />
-        <p className="text-center">
-            Course tracker allows you to track progress of the courses you are taking.
-            It is an effective app to make your learning process easy.
-        </p>
-
-        <div className="imgcont text-center bg-white py-3">
+        <div className="imgcont text-center bg-white">
+            <div className='w-100 d-flex justify-content-end gap-2 my-2'>
+                <NavLink to="/login" className="text-decoration-none bg-primary px-2 py-1 rounded text-white">Login</NavLink>
+                <NavLink to="/signup" className="text-decoration-none bg-primary px-2 py-1 rounded text-white">Register</NavLink>
+            </div>
+            <p className="text-center">
+                Course tracker allows you to track progress of the courses you are taking.
+                It is an effective app to make your learning process easy.
+            </p>
             <img src={TrackerHome} alt="symbol for tracker" className="logo rounded" />
             <div className="homeinfo">
                 <h4 className="text-left text-dark text-uppercase my-4">This app provides following functionalities:</h4>
