@@ -5,11 +5,14 @@ import Login from './pages/Login';
 import SharedLayout from './components/SharedLayout';
 import Error from './pages/Error';
 import CourseList from './pages/CourseList';
-
+import { ToastContainer} from 'react-toastify';
 
 function App() {
   return (
     <div className="App">
+      <ToastContainer 
+      position="top-center"
+      autoClose={1000} limit={1}/>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<SharedLayout />}>

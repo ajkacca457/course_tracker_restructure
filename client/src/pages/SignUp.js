@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ImPencil2 } from "react-icons/im";
-
+import {toast} from "react-toastify";
 
 const Signup = () => {
 
@@ -14,6 +14,10 @@ const Signup = () => {
     const handleSubmit = e => {
         e.preventDefault();
         const {username,email,password}=values;
+        if(!username || !email || !password) {
+            toast("please add all the values");
+            return;
+        }
 
     };
 
