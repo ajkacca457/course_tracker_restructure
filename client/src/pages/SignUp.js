@@ -5,9 +5,24 @@ import { ImPencil2 } from "react-icons/im";
 
 const Signup = () => {
 
+    const [values,setValues]= useState({
+        username:"",
+        email:"",
+        password:""
+    })
+
     const handleSubmit = e => {
         e.preventDefault();
+        const {username,email,password}=values;
+
     };
+
+    const handeChange=(e)=>{
+        setValues({
+            ...values,
+            [e.target.name]:e.target.value
+        })
+    }
 
     return (
         <div className="logincont">
@@ -18,25 +33,34 @@ const Signup = () => {
                     <div className="form-group text-left my-3">
                         <input
                             type="text"
+                            name="username"
                             className="form-control"
                             id="username"
                             placeholder="Enter your username"
+                            value={values.username}
+                            onChange={handeChange}
                         />
                     </div>
                     <div className="form-group text-left my-3">
                         <input
                             type="email"
+                            name="email"
                             className="form-control"
                             id="email"
                             placeholder="Enter email"
+                            value={values.email}
+                            onChange={handeChange}
                         />
                     </div>
                     <div className="form-group text-left my-3">
                         <input
                             type="password"
+                            name='password'
                             className="form-control"
                             id="password"
                             placeholder="Password"
+                            value={values.password}
+                            onChange={handeChange}
                         />
                     </div>
 

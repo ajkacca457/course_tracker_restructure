@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+import FetchApi from "../../utils/FetchApi";
 
 const initialState= {
     isLoading:false,
@@ -9,13 +9,14 @@ const initialState= {
 
 
 export const registerUser= createAsyncThunk("user/registerUser", async(user,thunkAPI)=>{
-    console.log(thunkAPI)
+    console.log(thunkAPI.getState());
+    console.log(user);
 })
 
 
 const userSlice= createSlice({
     name:"user",
-    initialState
+    initialState,
 })
 
 
