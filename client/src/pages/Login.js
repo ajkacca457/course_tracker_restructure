@@ -9,6 +9,8 @@ import {toast} from "react-toastify";
 const Login = () => {
 
     const {isLoading, user}= useSelector((state)=> {return state.user});
+
+    console.log(user);
     const dispatch= useDispatch();
     const navigate= useNavigate();
 

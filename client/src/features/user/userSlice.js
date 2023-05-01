@@ -4,11 +4,10 @@ import {toast} from "react-toastify";
 import { setLocalStorage, getLocalStorage } from "../../utils/utilsFunc";
 
 
-
 const initialState= {
     isLoading:false,
-    user:getLocalStorage.user?JSON.parse(getLocalStorage.user):null,
-    token:getLocalStorage.token?JSON.parse(getLocalStorage.token):null
+    user:getLocalStorage().user?JSON.parse(getLocalStorage().user):null,
+    token:getLocalStorage().token?JSON.parse(getLocalStorage().token):null
 }
 
 
