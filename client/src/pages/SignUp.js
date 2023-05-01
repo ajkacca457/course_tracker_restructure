@@ -3,15 +3,19 @@ import { NavLink } from 'react-router-dom';
 import { ImPencil2 } from "react-icons/im";
 import {toast} from "react-toastify";
 import { registerUser } from '../features/user/userSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { ThreeDots } from 'react-loader-spinner';
 
 const Signup = () => {
     
-    const [values,setValues]= useState({
+    const {isLoading}= useSelector((state)=>{ return state.user});
+
+    const initialValues= {
         username:"",
         email:"",
         password:""
-    })
+    };
+    const [values,setValues]= useState(initialValues);
 
     const dispatch= useDispatch();
 
@@ -23,6 +27,7 @@ const Signup = () => {
             return;
         }
         dispatch(registerUser({username,email,password}));
+        setValues(initialValues);
 
     };
 
@@ -76,8 +81,9 @@ const Signup = () => {
                     <button
                         type="submit"
                         className="btn btn-info signup-btn mt-4 text-white"
+                        disabled={isLoading}
                     >
-                        Submit
+                        {isLoading?<ThreeDots width="30" height="30" color='#FFFFFF'/>:"Submit"}
                     </button>
                 </form>
 

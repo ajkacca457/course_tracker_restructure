@@ -1,12 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import FetchApi from "../../utils/FetchApi";
 import {toast} from "react-toastify";
-import { setLocalStorage } from "../../utils/utilsFunc";
+import { setLocalStorage, getLocalStorage } from "../../utils/utilsFunc";
+
+
 
 const initialState= {
     isLoading:false,
-    user:null,
-    token:null
+    user:getLocalStorage.user?JSON.parse(getLocalStorage.user):null,
+    token:getLocalStorage.token?JSON.parse(getLocalStorage.token):null
 }
 
 
