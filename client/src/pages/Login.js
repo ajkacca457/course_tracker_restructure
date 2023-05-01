@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { RiLoginBoxFill } from "react-icons/ri";
 import { ThreeDots } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,8 +8,17 @@ import {toast} from "react-toastify";
 
 const Login = () => {
 
-    const {isLoading}= useSelector((state)=> {return state.user});
+    const {isLoading, user}= useSelector((state)=> {return state.user});
     const dispatch= useDispatch();
+    const navigate= useNavigate();
+
+    useEffect(()=>{
+        if(user) {
+            setTimeout(()=>{
+                navigate("/")
+            },500)
+        }
+    },[user, navigate])
 
     const initialValues= {
         email:"",
