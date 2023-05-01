@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import FetchApi from "../../utils/FetchApi";
 import {toast} from "react-toastify";
+import { setLocalStorage } from "../../utils/utilsFunc";
 
 const initialState= {
     isLoading:false,
@@ -32,10 +33,10 @@ const userSlice= createSlice({
             state.isLoading=false
             state.token=token;
             state.user=user;
+            setLocalStorage(user,token);
             toast.success(message);
         })
         .addCase(registerUser.rejected,(state,{payload})=>{
-            console.log(payload);
             state.isLoading=false;
             toast.error(payload);
         })
