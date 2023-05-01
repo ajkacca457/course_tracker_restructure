@@ -59,6 +59,7 @@ const userSlice= createSlice({
             state.isLoading=false;
             state.user= user;
             state.token=token;
+            setLocalStorage(user,token);
             toast.success(message);
         })
         .addCase(loginUser.rejected,(state,{payload})=>{
