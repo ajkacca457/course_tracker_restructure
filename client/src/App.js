@@ -6,6 +6,7 @@ import SharedLayout from './components/SharedLayout';
 import Error from './pages/Error';
 import CourseList from './pages/CourseList';
 import { ToastContainer} from 'react-toastify';
+import ProtectRoute from './components/ProtectRoute';
 
 function App() {
   return (
@@ -20,7 +21,10 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
           </Route>
-          <Route path='/courses' element={<CourseList/>} />
+          <Route path='/courses' 
+          element={<ProtectRoute>
+                      <CourseList/>
+                  </ProtectRoute>} />
           <Route path='*' element={<Error/>}/>
         </Routes>
       </BrowserRouter>
