@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-// import Easynav from './easynav';
-
+import Navigation from '../components/Navigation';
 const AddCourse = () => {
 //   const [name, setName] = useState('');
 //   const [numberoflessons, setNumberoflessons] = useState('');
@@ -72,7 +71,7 @@ const AddCourse = () => {
           </button>
         </form>
       </div>
-      {/* <Easynav /> */}
+      <Navigation/>
     </div>
   );
 };
