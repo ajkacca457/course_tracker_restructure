@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <ToastContainer 
       position="top-center"
-      autoClose={1000} limit={1}/>
+      autoClose={1000} limit={1} theme='colored'/>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<SharedLayout />}>

@@ -2,22 +2,27 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ImPencil2 } from "react-icons/im";
 import {toast} from "react-toastify";
+import { registerUser } from '../features/user/userSlice';
+import { useDispatch } from 'react-redux';
 
 const Signup = () => {
-
+    
     const [values,setValues]= useState({
         username:"",
         email:"",
         password:""
     })
 
+    const dispatch= useDispatch();
+
     const handleSubmit = e => {
         e.preventDefault();
         const {username,email,password}=values;
         if(!username || !email || !password) {
-            toast("please add all the values");
+            toast.warn("please add all the values");
             return;
         }
+        dispatch(registerUser({username,email,password}));
 
     };
 

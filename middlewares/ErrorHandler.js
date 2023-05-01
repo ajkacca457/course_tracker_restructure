@@ -18,6 +18,10 @@ const ErrorHandler=(err,req,res,next)=>{
         error= new CustomError(message,StatusCodes.NOT_FOUND);
     }
     
+    if(err.code===11000){
+        error= new CustomError(err.message,StatusCodes.CONFLICT);
+    }
+
     res.status(error.statusCode||StatusCodes.INTERNAL_SERVER_ERROR).json({
         success:false,
         message:error.message
