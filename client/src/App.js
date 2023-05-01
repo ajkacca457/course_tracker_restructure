@@ -7,6 +7,7 @@ import Error from './pages/Error';
 import CourseList from './pages/CourseList';
 import { ToastContainer} from 'react-toastify';
 import ProtectRoute from './components/ProtectRoute';
+import AddCourse from './pages/AddCourse';
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
           <Route path='/courses' 
           element={<ProtectRoute>
                       <CourseList/>
+                  </ProtectRoute>} />
+          <Route path='/add-course' 
+          element={<ProtectRoute>
+                      <AddCourse/>
                   </ProtectRoute>} />
           <Route path='*' element={<Error/>}/>
         </Routes>
