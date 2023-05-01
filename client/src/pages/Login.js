@@ -15,7 +15,7 @@ const Login = () => {
     useEffect(()=>{
         if(user) {
             setTimeout(()=>{
-                navigate("/")
+                navigate("/courses")
             },500)
         }
     },[user, navigate])

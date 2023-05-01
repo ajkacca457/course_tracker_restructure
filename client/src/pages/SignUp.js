@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { ImPencil2 } from "react-icons/im";
 import {toast} from "react-toastify";
 import { registerUser } from '../features/user/userSlice';
@@ -8,7 +8,7 @@ import { ThreeDots } from 'react-loader-spinner';
 
 const Signup = () => {
     
-    const {isLoading}= useSelector((state)=>{ return state.user});
+    const {isLoading,user}= useSelector((state)=>{ return state.user});
 
     const initialValues= {
         username:"",
@@ -18,6 +18,16 @@ const Signup = () => {
     const [values,setValues]= useState(initialValues);
 
     const dispatch= useDispatch();
+    const navigate= useNavigate();
+
+    useEffect(()=>{
+        if(user) {
+            setTimeout(()=>{
+                navigate("/courses");
+            },500)
+        }
+    },[user,navigate])
+
 
     const handleSubmit = e => {
         e.preventDefault();
