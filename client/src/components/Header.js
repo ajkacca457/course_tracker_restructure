@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { GrLogout } from "react-icons/gr";
 import { GiWhiteBook } from "react-icons/gi";
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
 
-    const [loggedin, setLoggedin] = useState(false);
+    const { user } = useSelector((state) => { return state.user; });
 
     const handlelogout = () => {
         // toast.success('logout successful');
@@ -23,7 +24,7 @@ const Header = () => {
                     </h4>
                 </NavLink>
 
-                {loggedin &&
+                {user &&
                     <button type="button" className="border-0 text-white py-1 px-2 rounded">
                         <GrLogout />
                         {" "}

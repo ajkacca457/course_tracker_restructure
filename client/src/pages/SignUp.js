@@ -1,52 +1,52 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { ImPencil2 } from "react-icons/im";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 import { registerUser } from '../features/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThreeDots } from 'react-loader-spinner';
 
 const Signup = () => {
-    
-    const {isLoading,user}= useSelector((state)=>{ return state.user});
 
-    const initialValues= {
-        username:"",
-        email:"",
-        password:""
+    const { isLoading, user } = useSelector((state) => { return state.user; });
+
+    const initialValues = {
+        username: "",
+        email: "",
+        password: ""
     };
-    const [values,setValues]= useState(initialValues);
+    const [values, setValues] = useState(initialValues);
 
-    const dispatch= useDispatch();
-    const navigate= useNavigate();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    useEffect(()=>{
-        if(user) {
-            setTimeout(()=>{
-                navigate("/courses");
-            },500)
+    useEffect(() => {
+        if (user) {
+            setTimeout(() => {
+                navigate("/dashboard");
+            }, 500);
         }
-    },[user,navigate])
+    }, [user, navigate]);
 
 
     const handleSubmit = e => {
         e.preventDefault();
-        const {username,email,password}=values;
-        if(!username || !email || !password) {
+        const { username, email, password } = values;
+        if (!username || !email || !password) {
             toast.warn("please add all the values");
             return;
         }
-        dispatch(registerUser({username,email,password}));
+        dispatch(registerUser({ username, email, password }));
         setValues(initialValues);
 
     };
 
-    const handeChange=(e)=>{
+    const handeChange = (e) => {
         setValues({
             ...values,
-            [e.target.name]:e.target.value
-        })
-    }
+            [e.target.name]: e.target.value
+        });
+    };
 
     return (
         <div className="logincont">
@@ -93,7 +93,7 @@ const Signup = () => {
                         className="btn btn-info signup-btn mt-4 text-white"
                         disabled={isLoading}
                     >
-                        {isLoading?<ThreeDots width="30" height="30" color='#FFFFFF'/>:"Submit"}
+                        {isLoading ? <ThreeDots width="30" height="30" color='#FFFFFF' /> : "Submit"}
                     </button>
                 </form>
 

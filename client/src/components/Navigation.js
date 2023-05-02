@@ -6,24 +6,18 @@ const Navigation = () => (
     <div className="navcont text-white bg-dark">
 
       <div className="nav-item-easy">
-        <NavLink to="/home" className="text-white">
+        <NavLink to="/dashboard" className="text-white">
           <i className="fas fa-home" />
           <p>Home</p>
         </NavLink>
       </div>
 
       <div className="nav-item-easy">
-        <NavLink to="/add-course" className="text-white">
+        <NavLink to="/dashboard/add-course" className="text-white">
           <i className="fas fa-plus-circle" />
           <p>Add Course</p>
         </NavLink>
 
-      </div>
-      <div className="nav-item-easy">
-        <NavLink to="/courses" className="text-white">
-          <i className="fas fa-chart-line" />
-          <p>Track</p>
-        </NavLink>
       </div>
 
       {/* <div className="nav-item-easy">

@@ -5,16 +5,17 @@ import Login from './pages/Login';
 import SharedLayout from './components/SharedLayout';
 import Error from './pages/Error';
 import CourseList from './pages/CourseList';
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import ProtectRoute from './components/ProtectRoute';
 import AddCourse from './pages/AddCourse';
+import SharedLayoutDashboard from './components/SharedLayoutDashboard';
 
 function App() {
   return (
     <div className="App">
-      <ToastContainer 
-      position="top-center"
-      autoClose={1000} limit={1} theme='colored'/>
+      <ToastContainer
+        position="top-center"
+        autoClose={1000} limit={1} theme='colored' />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<SharedLayout />}>
@@ -22,15 +23,15 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
           </Route>
-          <Route path='/courses' 
-          element={<ProtectRoute>
-                      <CourseList/>
-                  </ProtectRoute>} />
-          <Route path='/add-course' 
-          element={<ProtectRoute>
-                      <AddCourse/>
-                  </ProtectRoute>} />
-          <Route path='*' element={<Error/>}/>
+
+          <Route path='/dashboard' element={<ProtectRoute>
+            <SharedLayoutDashboard />
+          </ProtectRoute>}>
+            <Route index path='/dashboard' element={<CourseList />} />
+            <Route index path='/dashboard/add-course' element={<AddCourse />} />
+          </Route>
+
+          <Route path='*' element={<Error />} />
         </Routes>
       </BrowserRouter>
 

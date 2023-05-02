@@ -4,48 +4,48 @@ import { RiLoginBoxFill } from "react-icons/ri";
 import { ThreeDots } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../features/user/userSlice';
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 
 const Login = () => {
 
-    const {isLoading, user}= useSelector((state)=> {return state.user});
+    const { isLoading, user } = useSelector((state) => { return state.user; });
 
     console.log(user);
-    const dispatch= useDispatch();
-    const navigate= useNavigate();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    useEffect(()=>{
-        if(user) {
-            setTimeout(()=>{
-                navigate("/courses")
-            },500)
+    useEffect(() => {
+        if (user) {
+            setTimeout(() => {
+                navigate("/dashboard");
+            }, 500);
         }
-    },[user, navigate])
+    }, [user, navigate]);
 
-    const initialValues= {
-        email:"",
-        password:""
-    }
+    const initialValues = {
+        email: "",
+        password: ""
+    };
 
-    const [values,setValues]= useState(initialValues);
+    const [values, setValues] = useState(initialValues);
 
 
-    const handleChange=(e)=>{
+    const handleChange = (e) => {
         setValues({
-            ...values,[e.target.name]:e.target.value
-        })
-    }
+            ...values, [e.target.name]: e.target.value
+        });
+    };
 
 
 
     const handleSubmit = e => {
         e.preventDefault();
-        const {email,password}= values;
-        if(!email || !password) {
+        const { email, password } = values;
+        if (!email || !password) {
             toast.warning("please fill up all the fields");
-            return
+            return;
         }
-        dispatch(loginUser({email,password}));
+        dispatch(loginUser({ email, password }));
         setValues(initialValues);
     };
 
@@ -82,7 +82,7 @@ const Login = () => {
                         className="btn btn-info signup-btn my-3 text-white"
                         disabled={isLoading}
                     >
-                        {isLoading?<ThreeDots width="30" height="30" color='#FFFFFF'/>:"Submit"}
+                        {isLoading ? <ThreeDots width="30" height="30" color='#FFFFFF' /> : "Submit"}
                     </button>
                 </form>
                 <div className="signupinfo">
