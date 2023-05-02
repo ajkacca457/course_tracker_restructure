@@ -2,7 +2,11 @@ import React from 'react';
 
 const Information = () => {
     return (
-        <div>Information</div>
+        <div className='page-container'>
+            <div className='content-container'>
+                <h1>Information</h1>
+            </div>
+        </div>
     );
 };
 

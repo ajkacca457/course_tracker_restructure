@@ -46,6 +46,24 @@ body {
   background: #5993e5;
 }
 
+.page-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-container {
+  width: 50%;
+  min-height: 50vh;
+  background-color: white;
+  text-align: center;
+  padding: 2%;
+  border-radius: 10px;
+}
+
+
 .loading {
   width: 50%;
   margin: 5% auto;
@@ -94,14 +112,15 @@ body {
   padding: 1%;
 }
 
+
+
 .progress-cont {
   width: 50%;
   margin: 15vh auto;
   background-color: white;
   text-align: center;
   padding: 2%;
-  height: 60vh;
-  overflow-y: scroll;
+  min-height: 50vh;
 }
 
 .infocontent {
