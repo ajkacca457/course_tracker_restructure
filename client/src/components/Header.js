@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import { GrLogout } from "react-icons/gr";
 import { GiWhiteBook } from "react-icons/gi";
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutUser } from '../features/user/userSlice';
+
 
 const Header = () => {
 
     const { user } = useSelector((state) => { return state.user; });
+    const dispatch = useDispatch();
 
     const handlelogout = () => {
-        // toast.success('logout successful');
-        console.log("logout successful");
+        dispatch(logoutUser());
     };
 
     return (
@@ -25,7 +27,7 @@ const Header = () => {
                 </NavLink>
 
                 {user &&
-                    <button type="button" className="border-0 text-white py-1 px-2 rounded">
+                    <button type="button" className="border-0 text-white py-1 px-2 rounded" onClick={handlelogout}>
                         <GrLogout />
                         {" "}
                         <span className='text-black'>Logout</span>
