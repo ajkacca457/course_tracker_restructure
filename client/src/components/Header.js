@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <div className="header bg-dark px-2 my-0">
             <div className='d-flex justify-content-between align-items-center header-cont mx-auto'>
-                <NavLink to="/" className="text-decoration-none">
+                <NavLink to={user ? "/dashboard" : "/"} className="text-decoration-none">
                     <h4 className="text-center text-white">
                         <GiWhiteBook />
                         {' '}
