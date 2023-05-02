@@ -9,6 +9,7 @@ import { ToastContainer } from 'react-toastify';
 import ProtectRoute from './components/ProtectRoute';
 import AddCourse from './pages/AddCourse';
 import SharedLayoutDashboard from './components/SharedLayoutDashboard';
+import Report from './pages/Report';
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
             <SharedLayoutDashboard />
           </ProtectRoute>}>
             <Route index path='/dashboard' element={<CourseList />} />
-            <Route index path='/dashboard/add-course' element={<AddCourse />} />
+            <Route path='/dashboard/add-course' element={<AddCourse />} />
+            <Route path='/dashboard/report' element={<Report />} />
           </Route>
 
           <Route path='*' element={<Error />} />

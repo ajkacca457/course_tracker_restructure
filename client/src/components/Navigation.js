@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { AiTwotoneHome } from "react-icons/ai";
 import { MdLibraryAdd } from "react-icons/md";
+import { AiOutlineAreaChart } from "react-icons/ai";
 
 const Navigation = () => (
   <div className="easynav">
@@ -22,12 +23,12 @@ const Navigation = () => (
 
       </div>
 
-      {/* <div className="nav-item-easy">
-        <NavLink to="/progress" className="text-white">
-          <i className="fas fa-chart-pie" />
+      <div className="nav-item-easy">
+        <NavLink to="/dashboard/report" className="text-white text-decoration-none">
+          <AiOutlineAreaChart />
           <p>Report</p>
         </NavLink>
-      </div> */}
+      </div>
 
     </div>
 
