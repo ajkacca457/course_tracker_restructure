@@ -5,6 +5,7 @@ const Information = () => {
         <div className='page-container'>
             <div className='content-container'>
                 <h1>Information</h1>
+                <p>All the information will be here</p>
             </div>
         </div>
     );
