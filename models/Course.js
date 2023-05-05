@@ -6,7 +6,7 @@ const CourseSchema = new mongoose.Schema({
     name: {
         type: String,
         requried: [true, "Please add a course name"],
-        maxLength: [25, "Course name cannot exceed 25 characters"]
+        maxLength: [50, "Course name cannot exceed 50 characters"]
     },
     number_of_lessons: {
         type: Number,
