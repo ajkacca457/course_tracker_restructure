@@ -17,7 +17,6 @@ const CourseSchema = new mongoose.Schema({
     lesson_completed: {
         type: Number,
         requried: [true, "Please add number of completed lessons"],
-        min: [1, "Number of lessons cannot be less than 1"],
         max: [100, "Number of lessons cannot exceed 100"],
     },
     hours_needed: {
@@ -29,7 +28,6 @@ const CourseSchema = new mongoose.Schema({
     hours_spended: {
         type: Number,
         required: [true, "Please add number of hours spended"],
-        min: [1, "Number of lessons cannot be less than 1"],
         max: [100, "Number of lessons cannot exceed 100"],
     },
 
