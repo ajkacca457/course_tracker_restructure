@@ -18,6 +18,16 @@ export const removeLocalStorage = () => {
     localStorage.removeItem("token");
 };
 
+
+export const authHeader=(thunkAPI)=>{
+    return {
+        headers:{
+            Authorization:`Bearer ${thunkAPI.getState().user.token}`
+        }
+    }
+}
+
+
 export const courses= [
     {
         "_id": "6454d9ff2f9876e2c07be2a3",

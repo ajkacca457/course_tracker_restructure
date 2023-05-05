@@ -1,8 +1,12 @@
 import React from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import { courses } from '../utils/utilsFunc';
+import { useSelector } from 'react-redux';
 
 const Report = () => {
+
+const {courses}= useSelector((state)=>state.courses);
+
+
   const totalcourses = courses.length;
   const totallessons = courses.map(item => item.number_of_lessons).reduce((sum, lessons) => sum + lessons, 0);
   const finishedlessons = courses.map(item => item.lesson_completed).reduce((sum, lessons) => sum + lessons, 0);
