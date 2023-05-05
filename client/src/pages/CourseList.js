@@ -28,7 +28,11 @@ const CourseList = () => {
 
   return (
       <div className="page-container">
-        <h4 className="bg-warning text-center p-2 w-50 rounded">List of Courses</h4>
+        <div className="bg-warning px-4 py-2 w-50 rounded d-flex justify-content-between align-items-center my-2">
+          <h4 >List of Courses</h4>
+          <p>Total courses:{" "}{courses.length}</p>
+        </div>
+        
         <div className="coursecontent rounded position-relative">
           {courses.length === 0 ? 
             <div className="text-white rounded"><h4>Your search doesnt match with any show here.</h4></div> 
