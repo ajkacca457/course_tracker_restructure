@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { getSingleCourse } from '../features/courses/courseSlice';
+import { useNavigate, useParams } from 'react-router-dom';
+import { getSingleCourse, deleteCourse } from '../features/courses/courseSlice';
 import Loading from '../components/Loading';
 import { toast } from 'react-toastify';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
@@ -22,7 +22,13 @@ const SingleCourse = () => {
     const year = createdat.getFullYear();
     const date = `${day}/${month}/${year}`;
 
+    const navigate= useNavigate();
 
+    const handleDelete=(e)=>{
+        e.preventDefault();
+        dispatch(deleteCourse(id));
+        navigate("/dashboard");
+    }
 
     useEffect(()=>{
         dispatch(getSingleCourse(`/courses/${id}`));
@@ -128,7 +134,7 @@ const SingleCourse = () => {
 
         <div className="btncont my-2 text-center d-flex justify-content-center">
           <button type="button" className="btn btn-success w-25 my-4 mx-4 ubtn">Update Progress</button>
-          <button type="button" className="btn btn-danger w-25 my-4 mx-4 ubtn">Delete Course</button>
+          <button type="button" className="btn btn-danger w-25 my-4 mx-4 ubtn" onClick={handleDelete}>Delete Course</button>
         </div>
 
       </div>

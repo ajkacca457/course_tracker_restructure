@@ -31,6 +31,15 @@ export const getSingleCourse= createAsyncThunk("course/getSingleCourse",async(ur
         }
 })
 
+export const deleteCourse= createAsyncThunk("course/deleteCourse",async(id,thunkAPI)=>{
+    try {
+        const response= await FetchApi.delete(`/courses/${id}`, authHeader(thunkAPI));
+        return response.data;
+    } catch (error) {
+        thunkAPI.rejectWithValue(error.response.data.message);
+    }
+})
+
 
 const courseSlice= createSlice({
     name:"course",
@@ -58,6 +67,17 @@ const courseSlice= createSlice({
             localStorage.setItem("course",JSON.stringify(payload.data));
         })
         .addCase(getSingleCourse.rejected,(state,{payload})=>{
+            state.isLoading=false;
+            toast.error(payload);
+        })
+        .addCase(deleteCourse.pending,(state)=>{
+            state.isLoading=true;
+        })
+        .addCase(deleteCourse.fulfilled,(state)=>{
+            state.isLoading=false;
+            toast.success("course deleted successfully")
+        })
+        .addCase(deleteCourse.rejected,(state,{payload})=>{
             state.isLoading=false;
             toast.error(payload);
         })
