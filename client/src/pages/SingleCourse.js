@@ -36,17 +36,17 @@ const SingleCourse = () => {
     return (
 
         <div className='page-container'>
+        <div className='bg-warning w-50 text-center py-3 mb-2 rounded'>
+            <h3>{name && name}</h3>
+                <p className="text-secondary">
+                    course created at:
+                    {date}
+                </p>
+        </div>
         <div className="courseinfo">
 
-        <div className="alldetail">
+        <div className="alldetail py-4 rounded">
         <div className="infocontent text-center rounded">
-          <h3>{name && name}</h3>
-          <p className="text-secondary">
-            {' '}
-            course created at:
-            {date}
-          </p>
-          <hr />
           <div className="percentinfo w-75 d-flex justify-content-between m-auto">
             <div className="percentcomplete p-2 text-white rounded">
 
@@ -127,8 +127,8 @@ const SingleCourse = () => {
         </div>
 
         <div className="btncont my-2 text-center d-flex justify-content-center">
-          <button type="button" className="btn btn-success w-50 mb-2 mr-2 ubtn">Update Progress</button>
-          <button type="button" className="btn btn-danger w-50 mb-2 ubtn">Delete Course</button>
+          <button type="button" className="btn btn-success w-25 my-4 mx-4 ubtn">Update Progress</button>
+          <button type="button" className="btn btn-danger w-25 my-4 mx-4 ubtn">Delete Course</button>
         </div>
 
       </div>

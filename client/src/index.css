@@ -37,13 +37,13 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #70bde8;
+  background: #ed4903;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #5993e5;
+  background: #ed4903;
 }
 
 .page-container {
@@ -100,6 +100,7 @@ body {
 }
 
 .coursecontent {
+  width: 50%;
   height: 60vh;
   overflow-y: scroll;
 }
