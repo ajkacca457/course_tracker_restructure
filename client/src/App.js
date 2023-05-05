@@ -11,6 +11,7 @@ import AddCourse from './pages/AddCourse';
 import SharedLayoutDashboard from './components/SharedLayoutDashboard';
 import Report from './pages/Report';
 import Information from './pages/Information';
+import SingleCourse from './components/SingleCourse';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <SharedLayoutDashboard />
           </ProtectRoute>}>
             <Route index path='/dashboard' element={<CourseList />} />
+            <Route index path='/dashboard/courses/:id' element={<SingleCourse />} />
             <Route path='/dashboard/add-course' element={<AddCourse />} />
             <Route path='/dashboard/report' element={<Report />} />
             <Route path='/dashboard/info' element={<Information />} />

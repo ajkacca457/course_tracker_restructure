@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
 const Course = props => {
@@ -33,7 +33,7 @@ const Course = props => {
               })}
             />
           </div>
-          <Link to={`/courses/${_id}`} className="link bg-primary w-50 rounded text-center border-0 text-white view-btn p-1">view info</Link>
+          <NavLink to={`/dashboard/courses/${_id}`} className="link bg-primary w-50 rounded text-center border-0 text-white view-btn p-1">view info</NavLink>
         </div>
       </div>
     </div>
