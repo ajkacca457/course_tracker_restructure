@@ -11,7 +11,7 @@ import AddCourse from './pages/AddCourse';
 import SharedLayoutDashboard from './components/SharedLayoutDashboard';
 import Report from './pages/Report';
 import Information from './pages/Information';
-import SingleCourse from './components/SingleCourse';
+import SingleCourse from './pages/SingleCourse';
 
 function App() {
   return (
