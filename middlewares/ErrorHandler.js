@@ -2,6 +2,8 @@ import { StatusCodes } from "http-status-codes";
 import CustomError from "../utils/CustomError.js";
 
 const ErrorHandler=(err,req,res,next)=>{
+    console.log(err);
+
     let error;
     error= {...err};
     error.name= err.name;

@@ -38,9 +38,11 @@ export const getSingleCourse = AsyncHandler(async (req, res, next) => {
 
 
 export const createCourse = AsyncHandler(async (req, res,next) => {
-    const { name, number_of_lessons, lesson_completed, hours_needed, hours_spended,createdBy } = req.body;
+    let { name, number_of_lessons, lesson_completed, hours_needed, hours_spended,createdBy } = req.body;
+    lesson_completed= lesson_completed||0;
+    hours_spended= hours_spended||0;
 
-    if (!name || !number_of_lessons || !lesson_completed || !hours_needed || !hours_spended) {
+    if (!name || !number_of_lessons || lesson_completed<0 || !hours_needed || hours_spended<0) {
         return next(new CustomError("Please provide all the fields", StatusCodes.BAD_REQUEST))
     }
 
