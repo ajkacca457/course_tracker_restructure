@@ -17,10 +17,10 @@ const Course = props => {
 
   return (
     <div className="course">
-      <div className="course-item card border-2 mb-2 bg-light">
-        <div className="content justify-content-between align-items-center p-1">
+      <div className="course-item card border-2 mb-2 bg-light px-4 py-2">
+        <div className="py-1 card-course">
           <p className="name">{name}</p>
-          <div className="progresscont text-right">
+          <div className="progresscont mx-auto">
             <CircularProgressbar
               value={percentage.toFixed()}
               text={`${percentage.toFixed()}%`}
@@ -33,7 +33,7 @@ const Course = props => {
               })}
             />
           </div>
-          <Link to={`/courses/${_id}`} className=" bg-primary w-50 rounded text-center border-0 text-white view-btn p-1 ml-auto">view info</Link>
+          <Link to={`/courses/${_id}`} className="link bg-primary w-50 rounded text-center border-0 text-white view-btn p-1">view info</Link>
         </div>
       </div>
     </div>
