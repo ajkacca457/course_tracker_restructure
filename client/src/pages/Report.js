@@ -16,10 +16,8 @@ const Report = () => {
   if (courses.length>0) {
     return (
     <div className='page-container'>
+        <h4 className="bg-warning text-center p-2 w-25 rounded">Progress Report</h4>
       <div className="progress-cont rounded">
-
-        <h4>Progress report</h4>
-        <hr />
         <div className="reportbar">
           <p>Progress Score:</p>
           <CircularProgressbar
