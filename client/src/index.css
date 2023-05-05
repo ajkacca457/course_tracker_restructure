@@ -82,9 +82,8 @@ body {
 
 .courseinfo {
   width: 50%;
-  margin: 10vh auto;
-  height: 100vh;
-  position: relative;
+  height: 50vh;
+  overflow-y: scroll;
 }
 
 .logincont {
@@ -121,11 +120,6 @@ body {
   padding: 2%;
   height: 60vh;
   overflow-y: scroll;
-}
-
-.infocontent {
-  height: 60vh;
-  overflow: auto;
 }
 
 .logo {
