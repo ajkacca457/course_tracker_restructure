@@ -331,31 +331,33 @@ body {
 
   .progress-cont {
     width: 95%;
-    height: 90vh;
+    height: 70vh;
     margin: 0 auto;
     padding-bottom: 10vh;
   }
 
+  .content-container {
+    width: 95%;
+  }
   .reportbar {
     width: 40%;
     margin: auto;
   }
 
   .coursecontent {
-    width: 100%;
+    width: 95%;
     margin: 0;
     height: 70vh;
     overflow-y: scroll;
   }
   .heading-home {
-    width: 100%;
+    width: 95%;
   }
   .course-form {
-    width: 100%;
+    width: 95%;
   }
 
   .heading-report {
-    margin-top: 10vh;
     width: 95%;
   }
 
