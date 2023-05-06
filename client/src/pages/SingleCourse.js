@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getSingleCourse, deleteCourse } from '../features/courses/courseSlice';
 import Loading from '../components/Loading';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import EditModal from '../components/EditModal';
 
 const SingleCourse = () => {
 
@@ -43,6 +44,7 @@ const SingleCourse = () => {
     return (
 
         <div className='page-container'>
+          <EditModal/>
         <div className='bg-warning text-center py-3 mb-2 rounded heading-single'>
             <h3>{name && name}</h3>
                 <p className="text-secondary">

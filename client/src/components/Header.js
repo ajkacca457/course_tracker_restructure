@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GrLogout } from "react-icons/gr";
 import { GiWhiteBook } from "react-icons/gi";
 import { NavLink } from 'react-router-dom';
