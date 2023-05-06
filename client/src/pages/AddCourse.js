@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import Navigation from '../components/Navigation';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createCourse } from '../features/courses/courseSlice';
 
@@ -14,6 +14,8 @@ const AddCourse = () => {
     hours_needed:"",
     hours_spended:""
   })
+
+  const {isLoading}= useSelector((state)=>state.courses);
 
   const dispatch= useDispatch();
   const navigate= useNavigate();
@@ -36,7 +38,9 @@ const AddCourse = () => {
     }
 
     dispatch(createCourse(data));
-    navigate("/dashboard");
+    setTimeout(()=>{
+      navigate("/dashboard");
+    },400)
   };
 
   const handleChange=(e)=>{
@@ -111,6 +115,7 @@ const AddCourse = () => {
           <button
             type="submit"
             className="btn btn-info w-100"
+            disabled={isLoading}
           >
             Create course
           </button>

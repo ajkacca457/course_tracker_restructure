@@ -34,7 +34,6 @@ export const getSingleCourse= createAsyncThunk("course/getSingleCourse",async(ur
 
 export const createCourse= createAsyncThunk("course/createCourse",async(data,thunkAPI)=>{
     const {url,course}= data;
-    console.log(data);
     try {
         const response= await FetchApi.post(url,course,authHeader(thunkAPI));
         return response.data;
@@ -47,7 +46,6 @@ export const createCourse= createAsyncThunk("course/createCourse",async(data,thu
 export const deleteCourse= createAsyncThunk("course/deleteCourse",async(id,thunkAPI)=>{
     try {
         const response= await FetchApi.delete(`/courses/${id}`, authHeader(thunkAPI));
-        thunkAPI.dispatch(getAllCourses("/courses"));
         return response.data;
     } catch (error) {
         thunkAPI.rejectWithValue(error.response.data.message);

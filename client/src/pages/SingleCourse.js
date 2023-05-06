@@ -27,7 +27,9 @@ const SingleCourse = () => {
     const handleDelete=(e)=>{
         e.preventDefault();
         dispatch(deleteCourse(id));
-        navigate("/dashboard");
+        setTimeout(()=>{
+          navigate("/dashboard"); 
+        },400)
     }
 
     useEffect(()=>{
@@ -134,7 +136,7 @@ const SingleCourse = () => {
 
         <div className="btncont my-2 text-center d-flex justify-content-center">
           <button type="button" className="btn btn-success w-25 my-4 mx-4 ubtn">Update Progress</button>
-          <button type="button" className="btn btn-danger w-25 my-4 mx-4 ubtn" onClick={handleDelete}>Delete Course</button>
+          <button type="button" className="btn btn-danger w-25 my-4 mx-4 ubtn" disabled={isLoading} onClick={handleDelete}>Delete Course</button>
         </div>
 
       </div>
