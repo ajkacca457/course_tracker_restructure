@@ -80,7 +80,11 @@ body {
   height: 100vh;
 }
 
-.heading-home {
+.heading-home,.heading-report {
+  width: 50%;
+}
+
+.course-form {
   width: 50%;
 }
 
@@ -328,8 +332,8 @@ body {
   .progress-cont {
     width: 95%;
     height: 90vh;
-    padding: 10vh 0;
     margin: 0 auto;
+    padding-bottom: 10vh;
   }
 
   .reportbar {
@@ -345,6 +349,14 @@ body {
   }
   .heading-home {
     width: 100%;
+  }
+  .course-form {
+    width: 100%;
+  }
+
+  .heading-report {
+    margin-top: 10vh;
+    width: 95%;
   }
 
   .updateformcont {
