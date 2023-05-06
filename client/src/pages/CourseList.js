@@ -28,7 +28,7 @@ const CourseList = () => {
 
   return (
       <div className="page-container">
-        <div className="bg-warning px-4 py-2 w-50 rounded d-flex justify-content-between align-items-center my-2">
+        <div className="bg-warning px-4 py-2 heading-home rounded d-flex justify-content-between align-items-center my-2">
           <h4 >List of Courses</h4>
           <p>Total courses:{" "}{courses.length}</p>
         </div>

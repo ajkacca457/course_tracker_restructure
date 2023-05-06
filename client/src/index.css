@@ -80,6 +80,10 @@ body {
   height: 100vh;
 }
 
+.heading-home {
+  width: 50%;
+}
+
 .courseinfo {
   width: 50%;
   height: 50vh;
@@ -223,7 +227,7 @@ body {
   text-align: right;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
 
   .logincont,
   .home {
@@ -334,10 +338,13 @@ body {
   }
 
   .coursecontent {
+    width: 100%;
     margin: 0;
-    height: 75vh;
+    height: 70vh;
     overflow-y: scroll;
-    padding-top: 15%;
+  }
+  .heading-home {
+    width: 100%;
   }
 
   .updateformcont {
