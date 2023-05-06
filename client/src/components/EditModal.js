@@ -1,9 +1,19 @@
 import React from 'react'
+import {RiCloseLine} from "react-icons/ri";
+import { useDispatch } from 'react-redux';
+import { closeModal } from '../features/courses/courseSlice';
+
 
 const EditModal = () => {
+
+const dispatch= useDispatch();
+
   return (
     <div className='modal-edit'>
         <div className='edit-form'>
+        <div className='w-100 d-flex justify-content-end mb-2'>
+            <button className='bg-danger text-white border-0 rounded' onClick={()=>{dispatch(closeModal())}}><RiCloseLine/></button>
+        </div>
         <h4 className="text-center bg-info py-2 text-white mb-3 rounded">Edit course</h4>
         <form>
           <div className="form-group text-left my-4">
@@ -66,7 +76,7 @@ const EditModal = () => {
 
           <button
             type="submit"
-            className="btn btn-info w-100"
+            className="btn btn-warning w-100"
             // disabled={isLoading}
           >
             Update course

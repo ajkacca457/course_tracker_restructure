@@ -5,10 +5,11 @@ import { getSingleCourse, deleteCourse } from '../features/courses/courseSlice';
 import Loading from '../components/Loading';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import EditModal from '../components/EditModal';
+import { displayModal } from '../features/courses/courseSlice';
 
 const SingleCourse = () => {
 
-    const {isLoading,singlecourse}= useSelector((state)=>state.courses);
+    const {isLoading,singlecourse,modaldisplay}= useSelector((state)=>state.courses);
 
     const {name,lesson_completed,number_of_lessons,hours_needed,hours_spended,createdAt}= singlecourse;
 
@@ -44,7 +45,7 @@ const SingleCourse = () => {
     return (
 
         <div className='page-container'>
-          <EditModal/>
+          {modaldisplay && <EditModal/>}
         <div className='bg-warning text-center py-3 mb-2 rounded heading-single'>
             <h3>{name && name}</h3>
                 <p className="text-secondary">
@@ -136,7 +137,7 @@ const SingleCourse = () => {
         </div>
 
         <div className="btncont my-2 text-center">
-          <button type="button" className="btn btn-success my-4 mx-4 ubtn">Update Progress</button>
+          <button type="button" className="btn btn-success my-4 mx-4 ubtn" onClick={()=>{dispatch(displayModal())}}>Update Progress</button>
           <button type="button" className="btn btn-danger my-4 mx-4 ubtn" disabled={isLoading} onClick={handleDelete}>Delete Course</button>
         </div>
 

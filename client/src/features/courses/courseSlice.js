@@ -10,7 +10,8 @@ const course= localStorage.getItem("course");
 const initialState= {
     courses:courses?JSON.parse(courses):[],
     isLoading:false,
-    singlecourse:course?JSON.parse(course):null
+    singlecourse:course?JSON.parse(course):null,
+    modaldisplay:false
 }
 
 export const getAllCourses= createAsyncThunk("course/getAllCourses",async(url,thunkAPI)=>{
@@ -56,6 +57,15 @@ export const deleteCourse= createAsyncThunk("course/deleteCourse",async(id,thunk
 const courseSlice= createSlice({
     name:"course",
     initialState,
+    reducers:{
+        displayModal:(state)=>{
+            state.modaldisplay=true;
+        },
+        closeModal:(state)=>{
+            state.modaldisplay=false;
+        }
+    },
+
     extraReducers:(builder)=>{
         builder
         .addCase(getAllCourses.pending,(state)=>{
@@ -108,6 +118,7 @@ const courseSlice= createSlice({
 
 })
 
+export const {displayModal,closeModal}= courseSlice.actions;
 
 export default courseSlice.reducer;
 
