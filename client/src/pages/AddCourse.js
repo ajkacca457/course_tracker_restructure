@@ -1,26 +1,42 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import Navigation from '../components/Navigation';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { createCourse } from '../features/courses/courseSlice';
+
 const AddCourse = () => {
-//   const [name, setName] = useState('');
-//   const [number_of_lessons, setNumberoflessons] = useState('');
-//   const [lesson_completed, setLessoncompleted] = useState('');
-//   const [hours_needed, setHoursneed] = useState('');
-//   const [hoursspend, setHoursspend] = useState('');
-//   const history = useHistory();
 
   const [valeus,setValues]= useState({
     name:"",
     number_of_lessons:"",
-    lessons_completed:"",
+    lesson_completed:"",
     hours_needed:"",
     hours_spended:""
   })
 
+  const dispatch= useDispatch();
+  const navigate= useNavigate();
 
 
   const handleSubmit = e => {
     e.preventDefault();
+    const {name,number_of_lessons,lesson_completed,hours_needed,hours_spended}=valeus;
+
+    if(!name || !number_of_lessons|| !lesson_completed|| !hours_needed||!hours_spended) {
+      toast.warning("please provide all the fields");
+      return;
+    }
+
+    const data= {
+      url:`/courses`,
+      course:{
+        name,number_of_lessons,lesson_completed,hours_needed,hours_spended
+      }
+    }
+
+    dispatch(createCourse(data));
+    navigate("/dashboard");
   };
 
   const handleChange=(e)=>{
@@ -60,9 +76,9 @@ const AddCourse = () => {
             <input
               type="number"
               className="form-control"
-              name="lessons_completed"
+              name="lesson_completed"
               placeholder="Number of lessons completed"
-              value={valeus.lessons_completed}
+              value={valeus.lesson_completed}
               onChange={handleChange}
               min="0" max="100"
             />
