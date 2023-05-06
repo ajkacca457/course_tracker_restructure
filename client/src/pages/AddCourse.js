@@ -15,8 +15,8 @@ const AddCourse = () => {
   };
 
   return (
-    <div className="logincont">
-      <div className="bg-white mx-auto p-2 rounded courseitem">
+    <div className="page-container">
+      <div className="bg-white mx-auto p-2 rounded courseitem w-50">
         <h4 className="text-center bg-info py-2 text-white mb-3 rounded">Add new course</h4>
         <form onSubmit={handleSubmit}>
           <div className="form-group text-left my-4">
