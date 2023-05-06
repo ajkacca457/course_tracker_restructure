@@ -62,7 +62,7 @@ const SingleCourse = () => {
                 text={`${percentcom.toFixed()}%`}
                 styles={buildStyles({
                 // Colors
-                  pathColor: 'green',
+                  pathColor: '#50C878',
                   textColor: 'white',
                   trailColor: 'white',
                   backgroundColor: '#3e98c7',
@@ -77,7 +77,7 @@ const SingleCourse = () => {
                 text={`${percentrem.toFixed()}%`}
                 styles={buildStyles({
                   // Colors
-                  pathColor: 'red',
+                  pathColor: '#FA8072',
                   textColor: 'white',
                   trailColor: 'white',
                   backgroundColor: '#3e98c7',

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Balthazar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 
 body {
   margin: 0;
@@ -8,7 +8,7 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
   overflow-x: hidden;
-  font-family: 'Balthazar', serif;
+  font-family: 'PT Serif', serif;
 }
 
 /* width */
