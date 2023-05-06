@@ -26,12 +26,15 @@ const Header = () => {
                     </h4>
                 </NavLink>
 
-                {user &&
+                {user && 
+                <div className='d-flex align-items-center'>
+                    <p className='text-white px-4 mb-0'>Logged in as {user.username}</p>
                     <button type="button" className="border-0 text-white py-1 px-2 rounded" onClick={handlelogout}>
                         <GrLogout />
                         {" "}
                         <span className='text-black'>Logout</span>
-                    </button>}
+                    </button>
+                </div>}
 
             </div>
         </div>
