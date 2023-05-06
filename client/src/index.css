@@ -80,7 +80,7 @@ body {
   height: 100vh;
 }
 
-.heading-home,.heading-report {
+.heading-home,.heading-report,.heading-single {
   width: 50%;
 }
 
@@ -254,8 +254,8 @@ body {
 
   .homecontent,
   .alldetail {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    margin:0 auto;
   }
 
   .easynav {
@@ -269,11 +269,6 @@ body {
   .signupitem,
   .courseitem {
     margin-top: 15%;
-  }
-
-  .infocontent {
-    height: 70vh;
-    overflow: auto;
   }
 
   .percentinfo h1 {
@@ -350,14 +345,7 @@ body {
     height: 70vh;
     overflow-y: scroll;
   }
-  .heading-home {
-    width: 95%;
-  }
-  .course-form {
-    width: 95%;
-  }
-
-  .heading-report {
+  .heading-home,.heading-report,.heading-single,.course-form {
     width: 95%;
   }
 
@@ -373,11 +361,11 @@ body {
 
   .courseinfo {
     width: 100%;
-    margin: 8vh auto;
-    height: 100vh;
+    height: 70vh;
+    margin: 0 auto;
   }
 
   .ubtn {
-    font-size: 30%;
+    font-size: 100%;
   }
 }
