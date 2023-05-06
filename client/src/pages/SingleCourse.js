@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getSingleCourse, deleteCourse } from '../features/courses/courseSlice';
 import Loading from '../components/Loading';
-import { toast } from 'react-toastify';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
 const SingleCourse = () => {
@@ -34,7 +33,7 @@ const SingleCourse = () => {
 
     useEffect(()=>{
         dispatch(getSingleCourse(`/courses/${id}`));
-    },[])
+    },[id])
     
     if(isLoading){
         return(<Loading/>)
