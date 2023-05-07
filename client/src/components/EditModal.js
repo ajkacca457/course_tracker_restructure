@@ -18,6 +18,12 @@ const [valeus,selValues]= useState({
 
 const dispatch= useDispatch();
 
+const handleChange=(e)=>{
+  e.preventDefault();
+
+}
+
+
   return (
     <div className='modal-edit'>
         <div className='edit-form'>
@@ -33,7 +39,7 @@ const dispatch= useDispatch();
               className="form-control"
               placeholder="Enter course name"
               value={valeus.name}
-            //   onChange={handleChange}
+              onChange={handleChange}
             />
           </div>
           <div className="form-group text-left my-4">
@@ -43,7 +49,7 @@ const dispatch= useDispatch();
               name="number_of_lessons"
               placeholder="Enter number of lessons"
               value={valeus.number_of_lessons}
-            //   onChange={handleChange}
+              onChange={handleChange}
               min="0" max="100"
             />
           </div>
@@ -55,7 +61,7 @@ const dispatch= useDispatch();
               name="lesson_completed"
               placeholder="Number of lessons completed"
               value={valeus.lesson_completed}
-            //   onChange={handleChange}
+              onChange={handleChange}
               min="0" max="100"
             />
           </div>
@@ -67,7 +73,7 @@ const dispatch= useDispatch();
               name="hours_needed"
               placeholder="hours needed to complete the course"
               value={valeus.hours_needed}
-            //   onChange={handleChange}
+              onChange={handleChange}
               min="0" max="100"
             />
           </div>
@@ -79,7 +85,7 @@ const dispatch= useDispatch();
               name="hours_spended"
               placeholder="hours spend on the course"
               value={valeus.hours_spended}
-            //   onChange={handleChange}
+              onChange={handleChange}
               min="0" max="100"
             />
           </div>
