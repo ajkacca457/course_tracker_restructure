@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import {RiCloseLine} from "react-icons/ri";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from '../features/courses/courseSlice';
+import { updateCourse } from '../features/courses/courseSlice';
+import { toast } from 'react-toastify';
 
 
 const EditModal = ({_id,name,number_of_lessons,lesson_completed,hours_spended,hours_needed}) => {
 
 
-const [valeus,selValues]= useState({
+const [valeus,setValues]= useState({
   name:name?name:"",
   number_of_lessons:number_of_lessons?number_of_lessons:"",
   lesson_completed:lesson_completed?lesson_completed:"",
@@ -16,13 +18,33 @@ const [valeus,selValues]= useState({
 
 })
 
+const {isLoading}= useSelector((state)=>state.courses);
 const dispatch= useDispatch();
 
 const handleChange=(e)=>{
   e.preventDefault();
-
+  setValues({...valeus,[e.target.name]:e.target.value})
 }
 
+const handleSubmit=(e)=>{
+  e.preventDefault();
+  const {name,lesson_completed,number_of_lessons,hours_needed,hours_spended}= valeus;
+  if(!name||!lesson_completed||!number_of_lessons||!hours_needed||!hours_spended){
+    toast.warning("please provide all the values");
+    return;
+  }
+
+  let courseData= {
+    id:_id,
+    course:{
+      name,lesson_completed,number_of_lessons,hours_needed,hours_spended
+    }
+  }
+  dispatch(updateCourse(courseData));
+  setTimeout(()=>{
+    dispatch(closeModal());
+  },400)
+}
 
   return (
     <div className='modal-edit'>
@@ -31,7 +53,7 @@ const handleChange=(e)=>{
             <button className='bg-danger text-white border-0 rounded' onClick={()=>{dispatch(closeModal())}}><RiCloseLine/></button>
         </div>
         <h4 className="text-center bg-info py-2 text-white mb-3 rounded">Edit course</h4>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="form-group text-left my-4">
             <input
               type="text"
@@ -93,9 +115,9 @@ const handleChange=(e)=>{
           <button
             type="submit"
             className="btn btn-warning w-100"
-            // disabled={isLoading}
+            disabled={isLoading}
           >
-            Update course
+            Update
           </button>
         </form>
         </div>

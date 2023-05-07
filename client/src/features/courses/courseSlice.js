@@ -44,6 +44,17 @@ export const createCourse= createAsyncThunk("course/createCourse",async(data,thu
 })
 
 
+export const updateCourse= createAsyncThunk("course/updateCourse",async(data,thunkAPI)=>{
+    const {id,course}= data;
+    try {
+        const response= await FetchApi.patch(`/courses/${id}`,course,authHeader(thunkAPI));
+        return response.data;
+    } catch (error) {
+        thunkAPI.rejectWithValue(error.response.data.message);
+    }
+})
+
+
 export const deleteCourse= createAsyncThunk("course/deleteCourse",async(id,thunkAPI)=>{
     try {
         const response= await FetchApi.delete(`/courses/${id}`, authHeader(thunkAPI));
@@ -100,6 +111,18 @@ const courseSlice= createSlice({
             toast.success("course added successfully");
         })
         .addCase(createCourse.rejected,(state,{payload})=>{
+            state.isLoading=false;
+            toast.error(payload);
+        })
+        .addCase(updateCourse.pending,(state)=>{
+            state.isLoading=true;
+        })
+        .addCase(updateCourse.fulfilled,(state,{payload})=>{
+            state.isLoading=false;
+            state.singlecourse=payload.data;
+            toast.success("course updated!")
+        })
+        .addCase(updateCourse.rejected,(state,{payload})=>{
             state.isLoading=false;
             toast.error(payload);
         })
