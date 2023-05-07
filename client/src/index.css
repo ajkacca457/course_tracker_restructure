@@ -377,8 +377,9 @@ label {
     height: 90%;
   }
 
-  .updateform {
-    width: 80%;
+  .edit-form{
+    width: 95%;
+    margin: auto;
   }
 
   .courseinfo {
