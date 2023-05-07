@@ -22,19 +22,6 @@ body {
   border-radius: 10px;
 }
 
-.logout {
-  background: transparent;
-  border: none;
-  display: block;
-}
-
-.header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #ed4903;
@@ -44,6 +31,13 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #ed4903;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .page-container {
@@ -70,16 +64,6 @@ body {
   margin: 5% auto;
 }
 
-.head1 {
-  font-size: 100%;
-}
-
-.coursecontainer {
-  margin: 4% auto;
-  width: 50%;
-  height: 100vh;
-}
-
 .heading-home,.heading-report,.heading-single {
   width: 50%;
 }
@@ -100,7 +84,6 @@ body {
   height: 80vh;
 }
 
-.homecontent,
 .coursecontent,
 .alldetail {
   background-color: white;
@@ -148,32 +131,11 @@ body {
   padding: 1%;
 }
 
-.updateformcont {
-  position: absolute;
-  width: 100%;
-  height: 75%;
-  background-color: rgba(51, 174, 219, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.updateform {
-  width: 50%;
-}
-
 .easynav {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-}
-
-.tagline {
-  width: 25%;
-  text-align: center;
-  margin-left: auto;
-  margin-top: 1%;
 }
 
 .content {
@@ -208,13 +170,6 @@ body {
 .reportbar {
   width: 20%;
   margin: auto;
-}
-
-.cbtn {
-  font-size: 80%;
-  background: transparent;
-  color: red;
-  border: none;
 }
 
 .header-cont {
@@ -263,18 +218,11 @@ label {
     padding: 5vh 2%;
   }
 
-  .coursecontainer {
-    height: 100vh;
-    width: 100%;
-    background-color: white;
-  }
-
   .homeinfo {
     width: 80%;
     margin: auto;
   }
 
-  .homecontent,
   .alldetail {
     width: 95%;
     margin:0 auto;
@@ -311,16 +259,6 @@ label {
     background-repeat: no-repeat;
     color: white;
     padding: 15vh 2%;
-  }
-
-  .tagline {
-    width: 100%;
-    text-align: right;
-  }
-
-  .tagline,
-  .tagbtn {
-    font-size: 80%;
   }
 
   .course-item,
@@ -369,12 +307,6 @@ label {
   }
   .heading-home,.heading-report,.heading-single,.course-form {
     width: 95%;
-  }
-
-  .updateformcont {
-    position: absolute;
-    width: 100%;
-    height: 90%;
   }
 
   .edit-form{
