@@ -55,6 +55,7 @@ const handleSubmit=(e)=>{
         <h4 className="text-center bg-info py-2 text-white mb-3 rounded">Edit course</h4>
         <form onSubmit={handleSubmit}>
           <div className="form-group text-left my-4">
+            <label className='form-label'>Course title</label>
             <input
               type="text"
               name='name'
@@ -65,6 +66,7 @@ const handleSubmit=(e)=>{
             />
           </div>
           <div className="form-group text-left my-4">
+          <label className='form-label'>Total lessons</label>
             <input
               type="number"
               className="form-control"
@@ -77,6 +79,7 @@ const handleSubmit=(e)=>{
           </div>
 
           <div className="form-group text-left my-4">
+          <label className='form-label'>Lessons completed</label>
             <input
               type="number"
               className="form-control"
@@ -89,6 +92,7 @@ const handleSubmit=(e)=>{
           </div>
 
           <div className="form-group text-left my-4">
+          <label className='form-label'>Hours required</label>
             <input
               type="number"
               className="form-control"
@@ -101,6 +105,7 @@ const handleSubmit=(e)=>{
           </div>
 
           <div className="form-group text-left my-4">
+          <label className='form-label'>Hours spended</label>
             <input
               type="number"
               className="form-control"
