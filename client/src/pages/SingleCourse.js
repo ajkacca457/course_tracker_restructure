@@ -45,7 +45,7 @@ const SingleCourse = () => {
     return (
 
         <div className='page-container'>
-          {modaldisplay && <EditModal/>}
+          {modaldisplay && <EditModal {...singlecourse}/>}
         <div className='bg-warning text-center py-3 mb-2 rounded heading-single'>
             <h3>{name && name}</h3>
                 <p className="text-secondary">

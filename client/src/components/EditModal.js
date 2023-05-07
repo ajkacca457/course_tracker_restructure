@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {RiCloseLine} from "react-icons/ri";
 import { useDispatch } from 'react-redux';
 import { closeModal } from '../features/courses/courseSlice';
 
 
-const EditModal = () => {
+const EditModal = ({_id,name,number_of_lessons,lesson_completed,hours_spended,hours_needed}) => {
+
+
+const [valeus,selValues]= useState({
+  name:name?name:"",
+  number_of_lessons:number_of_lessons?number_of_lessons:"",
+  lesson_completed:lesson_completed?lesson_completed:"",
+  hours_spended:hours_spended?hours_spended:"",
+  hours_needed:hours_needed?hours_needed:""
+
+})
 
 const dispatch= useDispatch();
 
@@ -22,7 +32,7 @@ const dispatch= useDispatch();
               name='name'
               className="form-control"
               placeholder="Enter course name"
-            //   value={valeus.name}
+              value={valeus.name}
             //   onChange={handleChange}
             />
           </div>
@@ -32,7 +42,7 @@ const dispatch= useDispatch();
               className="form-control"
               name="number_of_lessons"
               placeholder="Enter number of lessons"
-            //   value={valeus.number_of_lessons}
+              value={valeus.number_of_lessons}
             //   onChange={handleChange}
               min="0" max="100"
             />
@@ -44,7 +54,7 @@ const dispatch= useDispatch();
               className="form-control"
               name="lesson_completed"
               placeholder="Number of lessons completed"
-            //   value={valeus.lesson_completed}
+              value={valeus.lesson_completed}
             //   onChange={handleChange}
               min="0" max="100"
             />
@@ -56,7 +66,7 @@ const dispatch= useDispatch();
               className="form-control"
               name="hours_needed"
               placeholder="hours needed to complete the course"
-            //   value={valeus.hours_needed}
+              value={valeus.hours_needed}
             //   onChange={handleChange}
               min="0" max="100"
             />
@@ -68,7 +78,7 @@ const dispatch= useDispatch();
               className="form-control"
               name="hours_spended"
               placeholder="hours spend on the course"
-            //   value={valeus.hours_spended}
+              value={valeus.hours_spended}
             //   onChange={handleChange}
               min="0" max="100"
             />
