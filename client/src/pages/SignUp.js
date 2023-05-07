@@ -49,6 +49,7 @@ const Signup = () => {
     };
 
     return (
+        <div className='page-container'>
         <div className="logincont">
             <div className=" bg-white mx-auto p-4 rounded signupitem">
                 <h4 className="text-center bg-secondary py-2 text-white mb-3 rounded"> <ImPencil2 /> Sign up for free!</h4>
@@ -103,6 +104,7 @@ const Signup = () => {
                 </div>
 
             </div>
+        </div>
         </div>
     );
 };

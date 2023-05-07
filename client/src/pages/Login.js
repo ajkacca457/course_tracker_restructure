@@ -48,6 +48,7 @@ const Login = () => {
     };
 
     return (
+        <div className='page-container'>
         <div className="logincont">
             <div className="bg-white mx-auto p-4 rounded loginitem">
                 <h4 className="text-center bg-secondary py-2 text-white mb-3 rounded"><RiLoginBoxFill /> Login</h4>
@@ -88,6 +89,7 @@ const Login = () => {
                     <NavLink to="/signup" className="text-primary">Signup</NavLink>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
