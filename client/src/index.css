@@ -239,7 +239,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0093e9;
+  background-color: rgba(16, 157, 239, 0.9);
 }
 .edit-form{
   background-color: white;
