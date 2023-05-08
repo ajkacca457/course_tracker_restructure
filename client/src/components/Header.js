@@ -28,13 +28,13 @@ const Header = () => {
                 </NavLink>
 
                 {user &&
-                    <div className='d-flex align-items-center'>
+                    <div className='nav-container align-items-center'>
                         <p className='text-white px-4 mb-0'>Logged in as {user.username}</p>
-                        <Navigation />
-                        <button type="button" className="border-0 text-white py-1 px-2 rounded" onClick={handlelogout}>
-                            <GrLogout />
+                        <Navigation/>
+                        <button type="button" className="border-0 py-1 px-2 rounded btn btn-danger" onClick={handlelogout}>
+                            <GrLogout/>
                             {" "}
-                            <span className='text-black'>Logout</span>
+                            <span className='text-white'>Logout</span>
                         </button>
                     </div>}
 

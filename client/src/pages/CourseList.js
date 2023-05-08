@@ -22,7 +22,7 @@ const CourseList = () => {
   if(courses.length<=0) {
     return (      
     <div className="page-container">
-      <h4 className="bg-warning text-center p-2 w-25 rounded">No courses available...</h4>
+      <h4 className="bg-warning text-center p-2 w-25 rounded">You dont have any course to track. Add course to start tracking.</h4>
     </div>)
   }
 
@@ -34,10 +34,7 @@ const CourseList = () => {
         </div>
         
         <div className="coursecontent rounded position-relative">
-          {courses.length === 0 ? 
-            <div className="text-white rounded"><h4>Your search doesnt match with any show here.</h4></div> 
-          : 
-          courses.map(item => (
+          { courses.map(item => (
             <CourseCard key={item._id} course={item} />))}
         </div>
       </div>

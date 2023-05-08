@@ -159,7 +159,7 @@ body {
 }
 
 .progresscont {
-  width: 30%;
+  width: 50%;
 }
 
 .reportbar {
@@ -204,7 +204,13 @@ label {
   color: orangered;
 }
 
-@media screen and (max-width: 800px) {
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1015px) {
 
   .logincont,
   .home {
@@ -252,7 +258,7 @@ label {
 
   .course-item,
   .view-btn {
-    font-size: 80%;
+    font-size: 100%;
   }
 
   .percentcomplete,
@@ -317,4 +323,9 @@ label {
   .ubtn {
     font-size: 100%;
   }
+
+  .nav-container {
+    display: none;
+  }
+
 }

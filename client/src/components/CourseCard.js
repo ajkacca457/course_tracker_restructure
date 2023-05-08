@@ -33,7 +33,7 @@ const Course = props => {
               })}
             />
           </div>
-          <NavLink to={`/dashboard/courses/${_id}`} className="link bg-primary w-50 rounded text-center border-0 text-white view-btn p-1">view info</NavLink>
+          <NavLink to={`/dashboard/courses/${_id}`} className="link bg-primary rounded text-center border-0 text-white btn btn-primary px-3 py-1">view info</NavLink>
         </div>
       </div>
     </div>

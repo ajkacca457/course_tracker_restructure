@@ -5,7 +5,7 @@ import { MdLibraryAdd, MdPermDeviceInformation } from "react-icons/md";
 import { AiOutlineAreaChart } from "react-icons/ai";
 
 const Navigation = () => (
-  <div className="easynav">
+  <div className="easynav mx-4">
     <div className="navcont text-white bg-dark">
 
       <div className="nav-item-easy">
