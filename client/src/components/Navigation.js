@@ -9,31 +9,31 @@ const Navigation = () => (
     <div className="navcont text-white bg-dark">
 
       <div className="nav-item-easy">
-        <NavLink to="/dashboard" className="text-white text-decoration-none">
+        <NavLink to="/dashboard" className="text-white text-decoration-none d-flex align-items-center">
           <AiTwotoneHome />
-          <p>Home</p>
+          <p className='mb-0 px-1'>Home</p>
         </NavLink>
       </div>
 
       <div className="nav-item-easy">
-        <NavLink to="/dashboard/add-course" className="text-white text-decoration-none">
+        <NavLink to="/dashboard/add-course" className="text-white text-decoration-none d-flex align-items-center">
           <MdLibraryAdd />
-          <p>Add Course</p>
+          <p className='mb-0 px-1'>Add</p>
         </NavLink>
 
       </div>
 
       <div className="nav-item-easy">
-        <NavLink to="/dashboard/report" className="text-white text-decoration-none">
+        <NavLink to="/dashboard/report" className="text-white text-decoration-none d-flex align-items-center">
           <AiOutlineAreaChart />
-          <p>Report</p>
+          <p className='mb-0 px-1'>Report</p>
         </NavLink>
       </div>
 
       <div className="nav-item-easy">
-        <NavLink to="/dashboard/info" className="text-white text-decoration-none">
+        <NavLink to="/dashboard/info" className="text-white text-decoration-none d-flex align-items-center">
           <MdPermDeviceInformation />
-          <p>Information</p>
+          <p className='mb-0 px-1'>Information</p>
         </NavLink>
       </div>
 

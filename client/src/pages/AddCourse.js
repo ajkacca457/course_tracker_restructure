@@ -7,46 +7,46 @@ import { createCourse } from '../features/courses/courseSlice';
 
 const AddCourse = () => {
 
-  const [valeus,setValues]= useState({
-    name:"",
-    number_of_lessons:"",
-    lesson_completed:"",
-    hours_needed:"",
-    hours_spended:""
-  })
+  const [valeus, setValues] = useState({
+    name: "",
+    number_of_lessons: "",
+    lesson_completed: "",
+    hours_needed: "",
+    hours_spended: ""
+  });
 
-  const {isLoading}= useSelector((state)=>state.courses);
+  const { isLoading } = useSelector((state) => state.courses);
 
-  const dispatch= useDispatch();
-  const navigate= useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
 
   const handleSubmit = e => {
     e.preventDefault();
-    const {name,number_of_lessons,lesson_completed,hours_needed,hours_spended}=valeus;
+    const { name, number_of_lessons, lesson_completed, hours_needed, hours_spended } = valeus;
 
-    if(!name || !number_of_lessons|| !lesson_completed|| !hours_needed||!hours_spended) {
+    if (!name || !number_of_lessons || !lesson_completed || !hours_needed || !hours_spended) {
       toast.warning("please provide all the fields");
       return;
     }
 
-    const data= {
-      url:`/courses`,
-      course:{
-        name,number_of_lessons,lesson_completed,hours_needed,hours_spended
+    const data = {
+      url: `/courses`,
+      course: {
+        name, number_of_lessons, lesson_completed, hours_needed, hours_spended
       }
-    }
+    };
 
     dispatch(createCourse(data));
-    setTimeout(()=>{
+    setTimeout(() => {
       navigate("/dashboard");
-    },400)
+    }, 400);
   };
 
-  const handleChange=(e)=>{
+  const handleChange = (e) => {
     e.preventDefault();
-    setValues({...valeus,[e.target.name]:e.target.value});
-  }
+    setValues({ ...valeus, [e.target.name]: e.target.value });
+  };
 
 
   return (
@@ -55,7 +55,7 @@ const AddCourse = () => {
         <h4 className="text-center bg-info py-2 text-white mb-3 rounded">Add new course</h4>
         <form onSubmit={handleSubmit}>
           <div className="form-group text-left my-4">
-          <label className='form-label'>Course title</label>
+            <label className='form-label'>Course title</label>
             <input
               type="text"
               name='name'
@@ -66,7 +66,7 @@ const AddCourse = () => {
             />
           </div>
           <div className="form-group text-left my-4">
-          <label className='form-label'>Total lessons</label>
+            <label className='form-label'>Total lessons</label>
             <input
               type="number"
               className="form-control"
@@ -79,7 +79,7 @@ const AddCourse = () => {
           </div>
 
           <div className="form-group text-left my-4">
-          <label className='form-label'>Lessons completed</label>
+            <label className='form-label'>Lessons completed</label>
             <input
               type="number"
               className="form-control"
@@ -92,7 +92,7 @@ const AddCourse = () => {
           </div>
 
           <div className="form-group text-left my-4">
-          <label className='form-label'>Hours required</label>
+            <label className='form-label'>Hours required</label>
             <input
               type="number"
               className="form-control"
@@ -105,7 +105,7 @@ const AddCourse = () => {
           </div>
 
           <div className="form-group text-left my-4">
-          <label className='form-label'>Hours spended</label>
+            <label className='form-label'>Hours spended</label>
             <input
               type="number"
               className="form-control"
@@ -126,7 +126,6 @@ const AddCourse = () => {
           </button>
         </form>
       </div>
-      <Navigation/>
     </div>
   );
 };

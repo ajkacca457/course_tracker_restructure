@@ -8,7 +8,6 @@ const SharedLayoutDashboard = () => {
         <div>
             <Header />
             <Outlet />
-            <Navigation />
         </div>
     );
 };

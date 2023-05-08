@@ -4,6 +4,7 @@ import { GiWhiteBook } from "react-icons/gi";
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../features/user/userSlice';
+import Navigation from './Navigation';
 
 
 const Header = () => {
@@ -26,15 +27,16 @@ const Header = () => {
                     </h4>
                 </NavLink>
 
-                {user && 
-                <div className='d-flex align-items-center'>
-                    <p className='text-white px-4 mb-0'>Logged in as {user.username}</p>
-                    <button type="button" className="border-0 text-white py-1 px-2 rounded" onClick={handlelogout}>
-                        <GrLogout />
-                        {" "}
-                        <span className='text-black'>Logout</span>
-                    </button>
-                </div>}
+                {user &&
+                    <div className='d-flex align-items-center'>
+                        <p className='text-white px-4 mb-0'>Logged in as {user.username}</p>
+                        <Navigation />
+                        <button type="button" className="border-0 text-white py-1 px-2 rounded" onClick={handlelogout}>
+                            <GrLogout />
+                            {" "}
+                            <span className='text-black'>Logout</span>
+                        </button>
+                    </div>}
 
             </div>
         </div>
