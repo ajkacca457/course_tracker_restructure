@@ -11,6 +11,8 @@ const SingleCourse = () => {
 
   const { isLoading, singlecourse, modaldisplay } = useSelector((state) => state.courses);
 
+
+  // spread operator eliminates null or undefined values error
   const { name, lesson_completed, number_of_lessons, hours_needed, hours_spended, createdAt } = { ...singlecourse };
 
   const dispatch = useDispatch();
