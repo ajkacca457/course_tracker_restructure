@@ -1,20 +1,13 @@
 import React from 'react';
-import { GrLogout } from "react-icons/gr";
 import { GiWhiteBook } from "react-icons/gi";
 import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { logoutUser } from '../features/user/userSlice';
+import { useSelector } from 'react-redux';
 import Navigation from './Navigation';
 
 
 const Header = () => {
 
     const { user } = useSelector((state) => { return state.user; });
-    const dispatch = useDispatch();
-
-    const handlelogout = () => {
-        dispatch(logoutUser());
-    };
 
     return (
         <div className="header bg-dark px-2 my-0">
@@ -31,11 +24,6 @@ const Header = () => {
                     <div className='nav-container align-items-center'>
                         <p className='text-white px-4 mb-0'>Logged in as {user.username}</p>
                         <Navigation/>
-                        <button type="button" className="border-0 py-1 px-2 rounded btn btn-danger" onClick={handlelogout}>
-                            <GrLogout/>
-                            {" "}
-                            <span className='text-white'>Logout</span>
-                        </button>
                     </div>}
 
             </div>

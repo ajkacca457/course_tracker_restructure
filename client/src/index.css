@@ -94,7 +94,7 @@ body {
 
 .coursecontent {
   width: 50%;
-  height: 60vh;
+  height: 65vh;
   overflow-y: scroll;
 }
 
@@ -112,7 +112,7 @@ body {
   background-color: white;
   text-align: center;
   padding: 2%;
-  height: 60vh;
+  height: 65vh;
   overflow-y: scroll;
 }
 
