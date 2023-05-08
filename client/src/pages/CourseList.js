@@ -33,7 +33,7 @@ const CourseList = () => {
           <p>Total courses:{" "}{courses.length}</p>
         </div>
         
-        <div className="coursecontent rounded position-relative">
+        <div className="coursecontent rounded">
           { courses.map(item => (
             <CourseCard key={item._id} course={item} />))}
         </div>

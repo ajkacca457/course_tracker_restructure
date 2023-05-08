@@ -21,12 +21,17 @@ const Header = () => {
                 </NavLink>
 
                 {user &&
-                    <div className='nav-container align-items-center'>
+                    <div className='desktop-nav-container align-items-center'>
                         <p className='text-white px-4 mb-0'>Logged in as {user.username}</p>
                         <Navigation/>
                     </div>}
-
             </div>
+            
+            {user &&
+                    <div className='mobile-nav-container align-items-center'>
+                        <p className='text-white px-4 mb-0'>Logged in as {user.username}</p>
+                        <Navigation/>
+                    </div>}
         </div>
     );
 };

@@ -19,17 +19,17 @@ const Navigation = () => {
   return(
 
   <div className="easynav mx-4">
-    <div className="navcont text-white bg-dark d-flex align-items-center gap-3">
+    <div className="navcont text-white bg-dark">
 
       <div className="nav-item-easy">
-        <NavLink to="/dashboard" className="text-white text-decoration-none d-flex align-items-center">
+        <NavLink to="/dashboard" className="text-white text-decoration-none d-flex align-items-center justify-content-center">
           <AiTwotoneHome />
           <p className='mb-0 px-1'>Home</p>
         </NavLink>
       </div>
 
       <div className="nav-item-easy">
-        <NavLink to="/dashboard/add-course" className="text-white text-decoration-none d-flex align-items-center">
+        <NavLink to="/dashboard/add-course" className="text-white text-decoration-none d-flex align-items-center justify-content-center">
           <MdLibraryAdd />
           <p className='mb-0 px-1'>Add</p>
         </NavLink>
@@ -37,21 +37,21 @@ const Navigation = () => {
       </div>
 
       <div className="nav-item-easy">
-        <NavLink to="/dashboard/report" className="text-white text-decoration-none d-flex align-items-center">
+        <NavLink to="/dashboard/report" className="text-white text-decoration-none d-flex align-items-center justify-content-center">
           <AiOutlineAreaChart />
           <p className='mb-0 px-1'>Report</p>
         </NavLink>
       </div>
 
       <div className="nav-item-easy">
-        <NavLink to="/dashboard/info" className="text-white text-decoration-none d-flex align-items-center">
+        <NavLink to="/dashboard/info" className="text-white text-decoration-none d-flex align-items-center justify-content-center">
           <MdPermDeviceInformation />
           <p className='mb-0 px-1'>Information</p>
         </NavLink>
       </div>
 
       <div className="nav-item-easy">
-            <button type="button" className="border-0 py-1 px-2 rounded btn btn-danger d-flex align-items-center gap-2" onClick={handlelogout}>
+            <button type="button" className="border-0 py-1 px-2 rounded btn btn-danger d-flex align-items-center justify-content-center mx-auto gap-2" onClick={handlelogout}>
               <GrLogout/>
               {" "}
               <span className='text-white'>Logout</span>
