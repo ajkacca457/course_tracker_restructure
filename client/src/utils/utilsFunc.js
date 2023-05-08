@@ -16,19 +16,21 @@ export const getLocalStorage = () => {
 export const removeLocalStorage = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
+    localStorage.removeItem("courses");
+    localStorage.removeItem("course");
 };
 
 
-export const authHeader=(thunkAPI)=>{
+export const authHeader = (thunkAPI) => {
     return {
-        headers:{
-            Authorization:`Bearer ${thunkAPI.getState().user.token}`
+        headers: {
+            Authorization: `Bearer ${thunkAPI.getState().user.token}`
         }
-    }
-}
+    };
+};
 
 
-export const courses= [
+export const courses = [
     {
         "_id": "6454d9ff2f9876e2c07be2a3",
         "name": "adobe photoshop",
@@ -139,4 +141,4 @@ export const courses= [
         "createdAt": "2023-05-05T10:34:14.267Z",
         "__v": 0
     }
-]
+];
