@@ -213,6 +213,9 @@ label {
 .mobile-nav-container{
   display: none;
 }
+.btn-container {
+  display: none;
+}
 
 @media screen and (max-width: 1015px) {
 
@@ -303,9 +306,7 @@ label {
     width: 95%;
     margin: 0;
     height: 70vh;
-    overflow-y: scroll;
-    z-index: 1;
-    
+    overflow-y: scroll;    
   }
 
   .heading-home,
@@ -342,6 +343,14 @@ label {
   }
   .navcont .nav-item-easy {
     margin: 20px 0;
+  }
+  .btn-container {
+    display: block;
+  }
+  .btn-container button {
+    color:white;
+    background-color: transparent;
+    border: none;
   }
 
 }
