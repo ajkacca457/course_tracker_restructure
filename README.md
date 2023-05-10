@@ -5,10 +5,20 @@ This app was a part of microverse final capstone project. This app has been fixe
 ## Project Display
 
 ![screenshot](./images/image1.jpg)
+\
+\
 ![screenshot](./images/image2.jpg)
+\
+\
 ![screenshot](./images/image3.jpg)
+\
+\
 ![screenshot](./images/image4.jpg)
+\
+\
 ![screenshot](./images/image5.jpg)
+\
+\
 ![screenshot](./images/image6.jpg)
 
 ## Live Demo
