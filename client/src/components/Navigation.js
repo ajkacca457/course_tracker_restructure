@@ -17,7 +17,9 @@ const Navigation = ({closeNav=null}) => {
   };
 
   const checkNavLink=()=>{
-    closeNav();
+    if(closeNav) {
+      closeNav();
+    } else return;
   }
 
   return(
