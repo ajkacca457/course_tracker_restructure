@@ -164,6 +164,9 @@ body {
   width: 20%;
   margin: auto;
 }
+.header {
+  z-index: 1;
+}
 
 .header-cont {
   max-width: 1200px;
@@ -301,6 +304,7 @@ label {
     margin: 0;
     height: 70vh;
     overflow-y: scroll;
+    z-index: 1;
     
   }
 
