@@ -44,12 +44,37 @@ To get a local copy of the repository please run the following commands on your 
 $ git clone `https://github.com/ajkacca457/course_tracker_restructure.git`
 $ cd course_tracker_restructure
 $ Run `npm install` to install the necessary modules for server and api.
+$ create config.env file in env folder
+$ Add the following variables in config.env file:
+    - PORT (preferablly 5000 for backend server)
+    - MONGO_URI (own connection string that for mongodb)
+    - JWT_SECRET (it could be anything but it is preferable to use encryption key generator to get a good key)
+    - JWT_EXPIRE (any range from 1h to 1y)
 $ cd client
 $ Run `npm install` to install node modules for front end.
 $ Run `npm run dev` to start server.
 $ Run `npm run start` to start client server.
 
 ```
+
+# Testing Project
+
+To run test in your terminal:
+
+```
+$ No tests available for the backend codebase.
+$ Run `react-scripts test` to run basic tests for front-end
+
+```
+
+# Future development pipeline
+
+To run test in your terminal:
+
+- Adding category and timeline based filtering to courses
+- Adding advanced query options
+- Pagination
+- Adding option for user to generate pdf report/sharable link.
 
 # Authors
 
