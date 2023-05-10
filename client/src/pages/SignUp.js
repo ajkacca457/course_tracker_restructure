@@ -24,7 +24,7 @@ const Signup = () => {
         if (user) {
             setTimeout(() => {
                 navigate("/dashboard");
-            }, 500);
+            }, 200);
         }
     }, [user, navigate]);
 

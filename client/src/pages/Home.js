@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import Easynav from './easynav';
 import TrackerHome from '../images/tracker-home.jpg';
 import Header from '../components/Header';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 
 const Home = () => {
+    const { user } = useSelector((state) => { return state.user; });
+    const navigate= useNavigate();
+    useEffect(()=>{
+        if (user) {
+            setTimeout(() => {
+                navigate("/dashboard");
+            }, 200);
+        }
+    }, [user,navigate])
+
 return (
     <div className="home rounded">
         <Header />
