@@ -57,6 +57,10 @@ $ Run `npm run start` to start client server.
 
 ```
 
+# Limitations
+
+- Right now the app doenst have a live link.
+
 # Testing Project
 
 To run test in your terminal:
@@ -75,6 +79,7 @@ To run test in your terminal:
 - Adding advanced query options
 - Pagination
 - Adding option for user to generate pdf report/sharable link.
+- deploy to live domain
 
 # Authors
 
